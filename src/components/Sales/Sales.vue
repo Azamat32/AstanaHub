@@ -113,7 +113,7 @@ export default {
   background: #e7e7e7;
   border-radius: 12px;
 }
-@media (max-width: 1180px){
+@media (max-width: 1440px){
   .sale__right{
     padding-right: 40px;
   }
@@ -134,6 +134,9 @@ export default {
     .sale__close{
         right: -15px;
         top: -11px;
+    }
+    .sale__right{
+      padding-right:0 ;
     }
 }
 </style>
