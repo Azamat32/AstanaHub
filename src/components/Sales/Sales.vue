@@ -113,7 +113,14 @@ export default {
   background: #e7e7e7;
   border-radius: 12px;
 }
-
+@media (max-width: 1180px){
+  .sale__right{
+    padding-right: 40px;
+  }
+  .sale__close{
+    right:0;
+  }
+}
 @media (max-width: 480px){
     .sale__body{
         text-align: center;

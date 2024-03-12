@@ -122,7 +122,7 @@
     background: rgb(228, 230, 229);
 }
 
-@media (max-width: 480px){
+@media (max-width: 780px){
    .footer_wrap{
     flex-direction: column;
     padding-bottom: 45%;

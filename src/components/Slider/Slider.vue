@@ -35,6 +35,44 @@
             Карьерные возможности
           </button>
         </div>
+        <div class="main_content_right mobile_filter">
+          <div class="form_input">
+            <div class="form_input_text">
+              <img src="../../assets/search.svg" alt="" />
+              <input type="text" placeholder="Поиск Курсов" />
+            </div>
+            <button><img src="../../assets/filter.svg" alt="" /></button>
+          </div>
+          <p class="form_title">Тип обучения на платформе</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <input type="text" placeholder="Любой" />
+              <img src="../../assets/arrow.svg" alt="" />
+            </div>
+          </div>
+          <div class="form_check">
+            <div class="form_check_input">
+              <img src="../../assets/check.svg" alt="" />
+            </div>
+            <p>С трудоустройством</p>
+          </div>
+          <p class="form_title">Уровень сложности</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <input type="text" placeholder="Любой" />
+              <img src="../../assets/arrow.svg" alt="" />
+            </div>
+          </div>
+          <p class="form_title">Длительность</p>
+          <p class="range">от 1 до 24 месяцев</p>
+          <div class="form_input">
+            <div class="form_input_select range_input">
+              <img class="minus" src="../../assets/minus.svg" alt="" />
+              <div class="range_number">1</div>
+              <img class="plus" src="../../assets/plus.svg" alt="" />
+            </div>
+          </div>
+        </div>
       </div>
       <div class="main_tab_content">
         <div class="main_content_center_tab">
@@ -72,7 +110,7 @@
           </div>
         </div>
       </div>
-      <div class="main_content_right">
+      <div class="main_content_right big_display">
         <div class="form_input">
           <div class="form_input_text">
             <img src="../../assets/search.svg" alt="" />
@@ -111,7 +149,12 @@
         </div>
       </div>
     </div>
-    <Modal v-if="activeItem" :item="activeItem" :active="true" @close="closeActiveModal"></Modal>
+    <Modal
+      v-if="activeItem"
+      :item="activeItem"
+      :active="true"
+      @close="closeActiveModal"
+    ></Modal>
   </div>
 </template>
 
@@ -299,9 +342,8 @@ export default {
 
     function increaseNumber() {
       let currentNumber = parseInt(rangeNumber.textContent, 10);
-      if (currentNumber <24){
+      if (currentNumber < 24) {
         rangeNumber.textContent = currentNumber + 1;
-
       }
     }
 
@@ -364,14 +406,14 @@ export default {
     closeActiveModal() {
       this.showActiveModal = false;
       this.activeItem = null;
-      this.enableBodyScroll(); 
+      this.enableBodyScroll();
     },
-   
+
     disableBodyScroll() {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     },
     enableBodyScroll() {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     },
     isActiveItem(item) {
       return this.activeItem === item;
@@ -411,6 +453,4 @@ export default {
 };
 </script>
 
-<style>
-.main_content_center_tab{}
-</style>
+<style></style>

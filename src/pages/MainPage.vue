@@ -11,7 +11,7 @@
       </div>
       <Slider></Slider>
     </div>
-    <Footer></Footer>  
+    <Footer></Footer>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
 import Navbar from "../components/Navbar/Navbar.vue";
 import Footer from "../components/Footer/Footer.vue";
 import Sales from "../components/Sales/Sales.vue";
-import Slider from "../components/Slider/Slider.vue"
+import Slider from "../components/Slider/Slider.vue";
 export default {
   name: "MainPage",
   props: {},
@@ -27,7 +27,7 @@ export default {
     Navbar,
     Footer,
     Sales,
-    Slider
+    Slider,
   },
 };
 </script>
@@ -45,16 +45,15 @@ export default {
   font-size: 24px;
 }
 
-
 .main_wrap {
   display: flex;
   gap: 32px;
 }
 .main_left {
-  width: 25%;
+  width:15%;
 }
-.main_content {
-  width: 100%;
+.main_tab_content {
+  width: 56%;
 }
 .menu_list button {
   display: flex;
@@ -88,12 +87,10 @@ export default {
   display: flex;
   gap: 50px;
   padding-bottom: 84px;
-  position:relative;
+  position: relative;
+  flex-wrap: wrap;
+}
 
-}
-.main_tab_content{
-    width: 100%;
-}
 .main_content_center_tab {
   display: flex;
   flex-wrap: wrap;
@@ -108,12 +105,10 @@ export default {
   cursor: pointer;
   font-weight: 400;
   font-size: 14px;
-  transition:0.4s
+  transition: 0.4s;
 }
 .main_content_center_tab button:hover {
-    background: rgba(123, 97, 255, 1);
-
-
+  background: rgba(123, 97, 255, 1);
 }
 .main_content_center_tab button.active {
   background: rgba(123, 97, 255, 1);
@@ -124,173 +119,198 @@ export default {
   margin-bottom: 20px;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
-  
 }
 
-.form_input{
-    display: flex;
-    align-items: center;
-    gap: 13px;
+.form_input {
+  display: flex;
+  align-items: center;
+  gap: 13px;
 }
-.form_input_text{
-    position: relative;
+.form_input_text {
+  position: relative;
 }
-.form_input_text img{
-    position: absolute;
-    left: 5px;
-    top: 10px;
+.form_input_text img {
+  position: absolute;
+  left: 5px;
+  top: 10px;
 }
-.form_input_text input{
-    border-radius: 6px;
-    text-indent: 25px;
-    padding: 10px 12px;
-    border-radius: 6px;
-    border: none;
+.form_input_text input {
+  border-radius: 6px;
+  text-indent: 25px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
 }
-.form_input button{
-    background: #50D177;
-    border: none;
-    width: 41px;
-    height: 38px;
-    border-radius: 6px;
-    cursor: pointer;
+.form_input button {
+  background: #50d177;
+  border: none;
+  width: 41px;
+  height: 38px;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.form_input{
-    margin-bottom: 12px;
+.form_input {
+  margin-bottom: 12px;
 }
-.form_title{
-    margin-bottom: 12px;
-    display: block;
+.form_title {
+  margin-bottom: 12px;
+  display: block;
 }
-.form_input_select{
-    position: relative;
-    width: 100%;
+.form_input_select {
+  position: relative;
+  width: 100%;
 }
-.form_input_select input{
-    border-radius: 6px;
-    text-indent: 5px;
-    padding: 10px 12px;
-    width: 100%;
+.form_input_select input {
+  border-radius: 6px;
+  text-indent: 5px;
+  padding: 10px 12px;
+  width: 100%;
 
-    border-radius: 6px;
-    border: none;
+  border-radius: 6px;
+  border: none;
 }
-.form_input_select img{
-    position: absolute;
-    right: 10px;
-    top: 15px;
+.form_input_select img {
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
-.form_check{
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 12px;;
+.form_check {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
 }
-.form_check_input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    border: 1px solid  #ABC0B1;
-    border-radius: 8px;
-    transition: 0.2s;
-   
+.form_check_input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #abc0b1;
+  border-radius: 8px;
+  transition: 0.2s;
 }
-.form_check_input.active{
-    background: #7A6AF4;
+.form_check_input.active {
+  background: #7a6af4;
 }
-.range{
-    color: #849B8B;
-    font-size: 14px;
-    margin-bottom: 12px;
+.range {
+  color: #849b8b;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
-.range_input{
-    text-align: center;
-    padding:12px;
-    background: #fff;
-    border-radius: 6px;
+.range_input {
+  text-align: center;
+  padding: 12px;
+  background: #fff;
+  border-radius: 6px;
 }
-.range_input img{
-    padding: 5px;
+.range_input img {
+  padding: 5px;
 }
-.range_input .minus{
-    left: 5px;
-    top: 15px;
-    cursor: pointer;
+.range_input .minus {
+  left: 5px;
+  top: 15px;
+  cursor: pointer;
 }
-.range_input .plus{
-    top: 10px;
-    cursor: pointer;
+.range_input .plus {
+  top: 10px;
+  cursor: pointer;
 }
 
 .slider_pagination {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    justify-content: center;
-    gap: 6px;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  gap: 6px;
 }
-.slider_pagination_wrap{
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    position: absolute;
-    justify-content: center;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    bottom: 0px;
+.slider_pagination_wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  justify-content: center;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 0px;
 }
-.slider_pagination_left ,.slider_pagination_right {
-    background-color: #F0F5F1;
-    border-radius: 12px;
-    padding: 12px 14px ;
-    cursor: pointer;
-    color: #031a0a;
+.slider_pagination_left,
+.slider_pagination_right {
+  background-color: #f0f5f1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  color: #031a0a;
 }
-.slider_pagination_left:hover ,.slider_pagination_right:hover {
-  
-    background-color: #50D177;
-
+.slider_pagination_left:hover,
+.slider_pagination_right:hover {
+  background-color: #50d177;
 }
-.slider_pagination span{
-    background-color: #F0F5F1;
-    border-radius: 12px;
-    padding: 12px 14px ;
-    cursor: pointer;
-    color: #031a0a;
-    transition: 0.3s;
+.slider_pagination span {
+  background-color: #f0f5f1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  color: #031a0a;
+  transition: 0.3s;
 }
-.slider_pagination span:hover{
-    background-color: #50D177;
-    color: #fff;
-
+.slider_pagination span:hover {
+  background-color: #50d177;
+  color: #fff;
 }
-.slider_pagination span.active{
-    background-color:#50D177;
-    color: #fff;
+.slider_pagination span.active {
+  background-color: #50d177;
+  color: #fff;
 }
-.mobile_image_banner{
+.mobile_image_banner {
   display: none;
 }
-.mobile_image_banner img{
+.mobile_image_banner img {
   width: 100%;
   margin-top: 12px;
   margin-bottom: 12px;
 }
-@media (max-width: 480px){
-    .main_left,.main_content_right{
-        display: none
-    }
-    .main_content_slider{
-        grid-template-columns: 1fr
-    }
-    .mobile_image_banner{
-      display: block;
-    }
-    .mobile_slider_item{
-      display: block;
-    }
+.mobile_filter {
+  display: none;
+}
+@media (max-width: 1180px) {
+  .main_tab_content {
+  width: 100%;
+}
+  .mobile_filter {
+    display: block;
+    width: 100%;
+  }
+  .form_input_text{
+    width: 100%;
+  }
+  .form_input_text input{
+    width: 100%;
+    border-radius: 6px;
+  }
+  .main_left{
+    width: 100%;
+    display:flex;
+    gap: 30px;
+  }
+  .big_display {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .main_left,
+  .main_content_right {
+    display: none;
+  }
+  .main_content_slider {
+    grid-template-columns: 1fr;
+  }
+  .mobile_image_banner {
+    display: block;
+  }
+  .mobile_slider_item {
+    display: block;
+  }
 }
 </style>

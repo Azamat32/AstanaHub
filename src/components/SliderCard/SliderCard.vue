@@ -60,7 +60,7 @@ export default {
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
 }
 .slider_item:hover .slider_item_hover_text {
-  bottom: -7%;
+  bottom: -15%;
 }
 .slider_item_hover_text {
   position: absolute;
@@ -125,6 +125,17 @@ export default {
 }
 .slider_item_button .circle svg {
   width: 20px;
+}
+@media (max-width: 780px){
+  .slider_item:hover .slider_item_hover_text {
+  bottom: -30%;
+}
+}
+@media (max-width: 1180px){
+  .slider_item:hover .slider_item_hover_text {
+  bottom: -5%;
+  height: 80%;
+}
 }
 
 @media (max-width: 480px){
