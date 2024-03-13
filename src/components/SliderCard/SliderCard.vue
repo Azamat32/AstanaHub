@@ -74,7 +74,7 @@ export default {
   background: #50d177;
   color: #fff;
   padding: 14px;
-  transition: height 0.4s ease;  
+  transition: bottom 0.8s ease, height 0.4s ease;
   bottom: -100%;
   z-index: 2;
   height: 0%;
