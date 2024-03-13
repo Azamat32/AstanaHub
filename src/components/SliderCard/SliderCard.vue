@@ -60,16 +60,24 @@ export default {
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
 }
 .slider_item:hover .slider_item_hover_text {
-  bottom: -15%;
+  bottom: 0;
+  z-index: 2;
+  height: 75%;
+}
+.slider_item_hover_text p{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight:400;
 }
 .slider_item_hover_text {
   position: absolute;
   background: #50d177;
   color: #fff;
   padding: 14px;
-  transition: 0.4s;
-  bottom: -105%;
+  transition: height 0.4s ease;  
+  bottom: -100%;
   z-index: 2;
+  height: 0%;
 }
 .slider_item_banner {
   position: absolute;
