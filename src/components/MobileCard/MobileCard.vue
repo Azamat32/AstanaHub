@@ -1,7 +1,7 @@
 <template>
   <div class="mobile_slider_item" @click="handleClick">
     <div class="slider_item_banner">
-      <img src="../../assets/beta_carrer.png" alt="" />
+      <img src="../../assets/test.jpg" alt="" />
       <div class="slider_item_banner_btn">
         <span class="wait_span"
           ><svg
@@ -93,9 +93,7 @@
     <div class="slider_item_button">
       <button>Подробнее</button>
     </div>
-    <div class="slider_item_hover_text">
-      <p>{{ item.description }}</p>
-    </div>
+  
   </div>
 </template>
 

@@ -387,7 +387,6 @@ export default {
       scrollToTop();
     }
     setActivePage(1);
-    // Event listener for pagination clicks
     paginationContainer.addEventListener("click", (event) => {
       if (event.target.tagName === "SPAN") {
         const selectedPage = parseInt(event.target.innerText, 10);

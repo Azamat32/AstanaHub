@@ -1,8 +1,8 @@
 <template>
   <div class="slider_item" @click="handleClick">
-    <!-- <div class="slider_item_banner">
-      <img src="./img/beta_carrer.png" alt="" />
-    </div> -->
+    <div class="slider_item_banner">
+      <img src="../../assets/test.jpg" alt="" />
+    </div>
     <div class="slider_item_text">
       <span>{{ item.category }}</span>
       <h2>{{ item.title }}</h2>
@@ -69,23 +69,28 @@ export default {
   padding: 14px;
   transition: 0.4s;
   bottom: -105%;
+  z-index: 2;
 }
 .slider_item_banner {
   position: absolute;
   width: 100%;
+  height: 100%;
 }
 .slider_item_banner img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
 }
 .slider_item_text {
   color: rgba(255, 255, 255, 1);
   padding: 15px 12px;
+  z-index: 2;
+  position: relative;
 }
 .slider_item_text span {
   font-size: 12px;
@@ -105,6 +110,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
 }
 .slider_item_button button {
   border: 1px solid rgba(237, 245, 240, 1);

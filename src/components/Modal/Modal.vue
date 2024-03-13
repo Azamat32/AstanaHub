@@ -95,6 +95,7 @@ export default {
   position: fixed;
   height: 100%;
   transform: translateY(100%);
+  z-index: 3;
 }
 .modal_video {
   position: relative;
