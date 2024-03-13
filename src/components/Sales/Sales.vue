@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .sale {
   padding: 10px 0;
-  background: #F6DFB3;
+  background: rgba(255, 207, 36, 1);
 }
 
 .sale__body {
@@ -126,10 +126,12 @@ export default {
         text-align: center;
         flex-wrap:wrap ;
         justify-content: center;
+        flex-direction: column;
     }
     .sale__left h3{
         font-size: 14px;
         max-width: 220px;
+        margin-bottom: 12px;
     }
     .sale__close{
         right: -15px;

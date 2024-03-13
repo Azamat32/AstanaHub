@@ -3,13 +3,18 @@
     <Sales></Sales>
     <navbar></navbar>
     <div class="container">
-      <div class="main_welcome">
-        <h1>Привет, Алибек! ✌️</h1>
+      <div class="main_content_wrap">
+        <MenuList></MenuList>
+        <div class="main_content_wrap_right">
+          <div class="main_welcome">
+            <h1>Привет, Алибек! ✌️</h1>
+          </div>
+          <div class="mobile_image_banner">
+            <img src="../assets/image 1.png" />
+          </div>
+          <Slider></Slider>
+        </div>
       </div>
-      <div class="mobile_image_banner">
-        <img src="../assets/image 1.png" />
-      </div>
-      <Slider></Slider>
     </div>
     <Footer></Footer>
   </div>
@@ -20,6 +25,7 @@ import Navbar from "../components/Navbar/Navbar.vue";
 import Footer from "../components/Footer/Footer.vue";
 import Sales from "../components/Sales/Sales.vue";
 import Slider from "../components/Slider/Slider.vue";
+import MenuList from "../components/MenuList/MenuList.vue";
 export default {
   name: "MainPage",
   props: {},
@@ -28,11 +34,19 @@ export default {
     Footer,
     Sales,
     Slider,
+    MenuList,
   },
 };
 </script>
 
 <style>
+.main_content_wrap{
+  display: flex;
+  gap: 32px;
+}
+.main_content_wrap_right{
+  width: 80%;
+}
 .main_welcome {
   background: linear-gradient(90deg, #9747ff 0%, #7b43fc 49.5%, #563cf4 99.99%);
   text-align: center;
@@ -50,10 +64,10 @@ export default {
   gap: 32px;
 }
 .main_left {
-  width:15%;
+  width: 15%;
 }
 .main_tab_content {
-  width: 56%;
+  width: 70%;
 }
 .menu_list button {
   display: flex;
@@ -120,7 +134,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 16px;
 }
-
+.main_content_right {
+  width: 25%;
+}
 .form_input {
   display: flex;
   align-items: center;
@@ -129,6 +145,13 @@ export default {
 .form_input_text {
   position: relative;
 }
+.form_input_text {
+    width: 100%;
+  }
+  .form_input_text input {
+    width: 100%;
+    border-radius: 6px;
+  }
 .form_input_text img {
   position: absolute;
   left: 5px;
@@ -205,6 +228,9 @@ export default {
   background: #fff;
   border-radius: 6px;
 }
+.range_number {
+  color: rgba(132, 155, 139, 1);
+}
 .range_input img {
   padding: 5px;
 }
@@ -226,6 +252,8 @@ export default {
   gap: 6px;
 }
 .slider_pagination_wrap {
+  user-select: none;
+
   display: flex;
   align-items: center;
   gap: 6px;
@@ -245,7 +273,7 @@ export default {
 }
 .slider_pagination_left:hover,
 .slider_pagination_right:hover {
-  background-color: #50d177;
+  background-color: rgba(123, 97, 255, 1);
 }
 .slider_pagination span {
   background-color: #f0f5f1;
@@ -256,11 +284,11 @@ export default {
   transition: 0.3s;
 }
 .slider_pagination span:hover {
-  background-color: #50d177;
+  background-color: rgba(123, 97, 255, 1);
   color: #fff;
 }
 .slider_pagination span.active {
-  background-color: #50d177;
+  background-color: rgba(123, 97, 255, 1);
   color: #fff;
 }
 .mobile_image_banner {
@@ -274,24 +302,30 @@ export default {
 .mobile_filter {
   display: none;
 }
-@media (max-width: 1180px) {
+@media (max-width: 1285px) {
+  .main_content_wrap{
+    flex-wrap: wrap;
+  }
+  .main_content_wrap_right{
+    width: 100%;
+  }
   .main_tab_content {
-  width: 100%;
-}
+    width: 100%;
+  }
   .mobile_filter {
     display: block;
     width: 100%;
   }
-  .form_input_text{
+  .form_input_text {
     width: 100%;
   }
-  .form_input_text input{
+  .form_input_text input {
     width: 100%;
     border-radius: 6px;
   }
-  .main_left{
+  .main_left {
     width: 100%;
-    display:flex;
+    display: flex;
     gap: 30px;
   }
   .big_display {

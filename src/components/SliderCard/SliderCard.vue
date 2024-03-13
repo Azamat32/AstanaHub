@@ -5,13 +5,14 @@
     </div>
     <div class="slider_item_text">
       <span>{{ item.category }}</span>
-      <h2>{{ item.title }}</h2>
+      <h1>{{ item.title }}</h1>
       <h2>{{ item.price }}</h2>
     </div>
     <div class="slider_item_button">
-      <button>Купить</button>
-      <button class="circle">
-        <svg
+     <button class="btn">Подробнее</button>
+     <button class="slider_register_btn">Записаться</button>
+      <!-- <button class=" btn circle">
+        <svg 
           width="14"
           height="14"
           viewBox="0 0 14 14"
@@ -23,7 +24,7 @@
             fill="white"
           />
         </svg>
-      </button>
+      </button> -->
     </div>
     <div class="slider_item_hover_text">
       <p>{{ item.description }}</p>
@@ -58,6 +59,8 @@ export default {
   border-radius: 12px;
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
+  user-select: none;
+
 }
 .slider_item:hover .slider_item_hover_text {
   bottom: 0;
@@ -71,7 +74,8 @@ export default {
 }
 .slider_item_hover_text {
   position: absolute;
-  background: #50d177;
+  background: linear-gradient(103.57deg, #9747FF 9.31%, #7A6AF4 100%);
+
   color: #fff;
   padding: 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
@@ -111,24 +115,52 @@ export default {
 }
 .slider_item_text h2 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
+}
+.slider_item_text h1 {
+  font-weight: 700;
+  font-size: 24px;
 }
 .slider_item_button {
-  padding: 0px 25px 19px 14px;
+  padding: 15px 14px;
+  justify-content: space-between;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 13px;
   position: relative;
   z-index: 2;
 }
-.slider_item_button button {
+
+.slider_register_btn{
+  background: rgba(123, 97, 255, 1);
+  border: 1px solid rgba(123, 97, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.slider_register_btn:hover{
+  border: 1px solid rgba(237, 245, 240, 1);
+  background: rgba(123, 97, 255, 1);
+
+
+}
+.slider_item_button .btn:hover{
+  border: 1px solid rgba(123, 97, 255, 1);
+
+}
+.slider_item_button .btn {
   border: 1px solid rgba(237, 245, 240, 1);
   background: none;
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
-  padding: 10px 20px;
+  padding: 10px 2px;
   cursor: pointer;
+  transition: 0.4s;
 }
+
 .slider_item_button .circle {
   border-radius: 40px;
   padding: 10px;
