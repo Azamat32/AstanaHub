@@ -107,6 +107,7 @@
               v-for="pageNumber in totalPagesArray"
               :key="pageNumber"
               @click="changePage(pageNumber)"
+              :class="{ active: currentPage === pageNumber }"
               >{{ pageNumber }}</span
             >
           </div>
