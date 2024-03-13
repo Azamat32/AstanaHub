@@ -99,13 +99,18 @@
           />
         </div>
         <div class="slider_pagination_wrap">
-          <div class="slider_pagination_left">
+          <div class="slider_pagination_left" @click="changePageLeft">
             <img src="../../assets/arraw_left.svg" alt="" />
           </div>
           <div class="slider_pagination">
-            <span>1</span>
+            <span
+              v-for="pageNumber in totalPagesArray"
+              :key="pageNumber"
+              @click="changePage(pageNumber)"
+              >{{ pageNumber }}</span
+            >
           </div>
-          <div class="slider_pagination_right">
+          <div class="slider_pagination_right" @click="changePageRight">
             <img src="../../assets/arraw_right.svg" alt="" />
           </div>
         </div>
@@ -126,7 +131,10 @@
           </div>
         </div>
         <div class="form_check">
-          <div class="form_check_input">
+          <div
+            :class="{ form_check_input: true, active: activeInput }"
+            @click="handleCheck"
+          >
             <img src="../../assets/check.svg" alt="" />
           </div>
           <p>С трудоустройством</p>
@@ -142,9 +150,19 @@
         <p class="range">от 1 до 24 месяцев</p>
         <div class="form_input">
           <div class="form_input_select range_input">
-            <img class="minus" src="../../assets/minus.svg" alt="" />
-            <div class="range_number">1</div>
-            <img class="plus" src="../../assets/plus.svg" alt="" />
+            <img
+              class="minus"
+              @click="decreaseNumber"
+              src="../../assets/minus.svg"
+              alt=""
+            />
+            <div class="range_number">{{ numberValue }}</div>
+            <img
+              class="plus"
+              @click="increaseNumber"
+              src="../../assets/plus.svg"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -172,10 +190,15 @@ export default {
   data() {
     return {
       filteredItems: [],
+      activeInput: false,
+      itemsPerPage: 12,
+      numberValue: 1,
       currentPage: 1,
       activeItem: null,
       showActiveModal: false,
-
+      countOfSliderItems: 0,
+      countArray: [],
+      totalPagesArray: 0,
       tabs: [
         { label: "Предпринимательство", active: false },
         { label: "Фриланс", active: false },
@@ -307,96 +330,48 @@ export default {
   },
 
   mounted() {
-    this.filteredItems = this.sliderItems;
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth", // Optional: smooth scrolling animation
-      });
-    }
-    const formCheckInput = document.querySelector(".form_check_input");
+    this.updateFilteredItems();
+    this.countOfSliderItems = this.sliderItems.length;
 
-    formCheckInput.addEventListener("click", function () {
-      this.classList.toggle("active");
-    });
-
-    const rangeInput = document.querySelector(".range_input");
-    const rangeNumber = rangeInput.querySelector(".range_number");
-    const minusButton = rangeInput.querySelector(".minus");
-    const plusButton = rangeInput.querySelector(".plus");
-
-    minusButton.addEventListener("click", function () {
-      decreaseNumber();
-    });
-
-    plusButton.addEventListener("click", function () {
-      increaseNumber();
-    });
-
-    function decreaseNumber() {
-      let currentNumber = parseInt(rangeNumber.textContent, 10);
-      if (currentNumber > 1) {
-        rangeNumber.textContent = currentNumber - 1;
-      }
-    }
-
-    function increaseNumber() {
-      let currentNumber = parseInt(rangeNumber.textContent, 10);
-      if (currentNumber < 24) {
-        rangeNumber.textContent = currentNumber + 1;
-      }
-    }
-
-    const itemsPerPage = 12;
-    const sliderItems = document.querySelectorAll(".slider_item");
-    const paginationContainer = document.querySelector(".slider_pagination");
-
-    const totalItems = sliderItems.length;
-
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-    const pageNumbers = Array.from(
+    const totalPages = Math.ceil(this.countOfSliderItems / this.itemsPerPage);
+    this.totalPagesArray = Array.from(
       { length: totalPages },
       (_, index) => index + 1
     );
-
-    pageNumbers.forEach((pageNumber) => {
-      const span = document.createElement("span");
-      span.textContent = pageNumber;
-      paginationContainer.appendChild(span);
-    });
-
-    function showItems(pageNumber) {
-      const start = (pageNumber - 1) * itemsPerPage;
-      const end = start + itemsPerPage;
-
-      sliderItems.forEach((item, index) => {
-        item.style.display = index >= start && index < end ? "block" : "none";
-      });
-    }
-
-    showItems(1);
-
-    function setActivePage(selectedPage) {
-      const paginationNumbers = paginationContainer.querySelectorAll("span");
-      paginationNumbers.forEach((span) => {
-        span.classList.remove("active");
-      });
-
-      paginationNumbers[selectedPage - 1].classList.add("active");
-      scrollToTop();
-    }
-    setActivePage(1);
-    paginationContainer.addEventListener("click", (event) => {
-      if (event.target.tagName === "SPAN") {
-        const selectedPage = parseInt(event.target.innerText, 10);
-        showItems(selectedPage);
-        setActivePage(selectedPage);
-      }
-    });
   },
-
+  watch: {
+    currentPage: "updateFilteredItems",
+  },
   methods: {
+    updateFilteredItems() {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      this.filteredItems = this.sliderItems;
+      this.filteredItems = this.filteredItems.slice(startIndex, endIndex);
+    },
+    changePage(newPage) {
+      this.currentPage = newPage;
+    },
+    changePageLeft() {
+      if (this.currentPage > 1) {
+        this.currentPage -= 1;
+      }
+    },
+    changePageRight() {
+      if (this.currentPage < this.totalPagesArray.length) {
+        this.currentPage += 1;
+      }
+    },
+    increaseNumber() {
+      if (this.numberValue < 24) {
+        this.numberValue = this.numberValue + 1;
+      }
+    },
+    decreaseNumber() {
+      if (this.numberValue > 1) {
+        this.numberValue = this.numberValue - 1;
+      }
+    },
     handleCardClick(clickedItem) {
       this.activeItem = clickedItem;
       this.showActiveModal = true;
@@ -417,7 +392,9 @@ export default {
     isActiveItem(item) {
       return this.activeItem === item;
     },
-
+    handleCheck() {
+      this.activeInput = !this.activeInput;
+    },
     handleTab(index, tab) {
       this.tabs.forEach((t) => {
         t.active = t === tab;
