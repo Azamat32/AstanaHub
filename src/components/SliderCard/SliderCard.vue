@@ -9,8 +9,8 @@
       <h2>{{ item.price }}</h2>
     </div>
     <div class="slider_item_button">
-     <button class="btn">Подробнее</button>
-     <button class="slider_register_btn">Записаться</button>
+      <button class="btn">Подробнее</button>
+      <button class="slider_register_btn">Записаться</button>
       <!-- <button class=" btn circle">
         <svg 
           width="14"
@@ -60,24 +60,27 @@ export default {
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   user-select: none;
-
 }
 .slider_item:hover .slider_item_hover_text {
   bottom: 0;
   z-index: 2;
-  height: 75%;
+  height: 100%;
 }
-.slider_item_hover_text p{
+.slider_item_hover_text p {
   font-size: 12px;
   line-height: 16px;
-  font-weight:400;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .slider_item_hover_text {
   position: absolute;
-  background: linear-gradient(103.57deg, #9747FF 9.31%, #7A6AF4 100%);
-
+  background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   color: #fff;
-  padding: 14px;
+  padding: 45px 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
   bottom: -100%;
   z-index: 2;
@@ -101,7 +104,6 @@ export default {
 .slider_item_text {
   color: rgba(255, 255, 255, 1);
   padding: 15px 12px;
-  z-index: 2;
   position: relative;
 }
 .slider_item_text span {
@@ -112,14 +114,21 @@ export default {
   margin-bottom: 13px;
   display: block;
   width: fit-content;
+  z-index: 4;
+  position: relative;
+  display: block;
 }
 .slider_item_text h2 {
   font-weight: 600;
   font-size: 16px;
+  z-index: 2;
+  position: relative;
 }
 .slider_item_text h1 {
   font-weight: 700;
   font-size: 24px;
+  z-index: 2;
+  position: relative;
 }
 .slider_item_button {
   padding: 15px 14px;
@@ -128,12 +137,12 @@ export default {
   align-items: center;
   gap: 13px;
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
-.slider_register_btn{
-  background: rgba(123, 97, 255, 1);
-  border: 1px solid rgba(123, 97, 255, 1);
+.slider_register_btn {
+  background: rgba(80, 209, 119, 1);
+  border: 1px solid rgba(80, 209, 119, 1);
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   padding: 10px 20px;
@@ -141,15 +150,12 @@ export default {
   cursor: pointer;
   transition: 0.4s;
 }
-.slider_register_btn:hover{
+.slider_register_btn:hover {
   border: 1px solid rgba(237, 245, 240, 1);
   background: rgba(123, 97, 255, 1);
-
-
 }
-.slider_item_button .btn:hover{
-  border: 1px solid rgba(123, 97, 255, 1);
-
+.slider_item_button .btn:hover {
+  border: 1px solid rgba(80, 209, 119, 1);
 }
 .slider_item_button .btn {
   border: 1px solid rgba(237, 245, 240, 1);
@@ -173,21 +179,21 @@ export default {
 .slider_item_button .circle svg {
   width: 20px;
 }
-@media (max-width: 780px){
+@media (max-width: 780px) {
   .slider_item:hover .slider_item_hover_text {
-  bottom: -30%;
+    bottom: -30%;
+  }
 }
-}
-@media (max-width: 1180px){
+@media (max-width: 1180px) {
   .slider_item:hover .slider_item_hover_text {
-  bottom: -5%;
-  height: 80%;
-}
+    bottom: 0%;
+    height: 100%;
+  }
 }
 
-@media (max-width: 480px){
-   .slider_item{
+@media (max-width: 480px) {
+  .slider_item {
     display: none;
-   }
+  }
 }
 </style>
