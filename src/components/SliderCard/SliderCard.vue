@@ -199,6 +199,12 @@ export default {
 }
 
 @media (max-width: 480px) {
+  .slider_item_button .btn{
+    width: 50%;
+  }
+  .slider_register_btn{
+    width: 30%;
 
+  }
 }
 </style>
