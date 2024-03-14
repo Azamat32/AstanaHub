@@ -17,14 +17,14 @@
 
         <div class="footer_hub_logo">
           <img class="footer_logo" src="../../assets/logo mid.png" alt="" />
-          <div class="footer_center">
+          <!-- <div class="footer_center">
             <h1>Партнеры</h1>
             <div class="footer_center_images">
               <img src="../../assets/microsoft.svg" alt="" />
               <img src="../../assets/nvidia.svg" alt="" />
               <img src="../../assets/google.svg" alt="" />
             </div>
-          </div>
+          </div> -->
         </div>
 
         <div class="footer_contacts">
@@ -144,6 +144,9 @@ export default {
     flex-direction: column;
     padding-bottom: 45%;
     text-align: center;
+  }
+  .footer_logo{
+    margin-bottom: 12px;
   }
   .footer_left {
     margin-bottom: 30px;

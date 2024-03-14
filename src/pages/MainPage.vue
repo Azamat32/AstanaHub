@@ -12,9 +12,9 @@
           <div class="main_welcome big_display ">
             <h1>Привет, Алибек! ✌️</h1>
           </div>
-          <div class="mobile_image_banner">
+          <!-- <div class="mobile_image_banner">
             <img src="../assets/image 1.png" />
-          </div>
+          </div> -->
           <component :is="activeSlider"></component>
 
         </div>
