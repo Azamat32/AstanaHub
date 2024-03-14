@@ -199,8 +199,6 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .slider_item {
-    display: none;
-  }
+
 }
 </style>

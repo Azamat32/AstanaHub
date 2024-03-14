@@ -238,8 +238,8 @@ export default {
 }
 @media (max-width: 480px){
   
-    .mobile_slider_item{
+    /* .mobile_slider_item{
       display: block;
-    }
+    } */
 }
 </style>

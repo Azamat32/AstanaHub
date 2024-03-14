@@ -20,11 +20,11 @@
               :item="item"
               @card-clicked="handleCardClick"
             />
-            <MobileCard
+            <!-- <MobileCard
               v-for="(item, index) in filteredItems"
               :key="'mobile-' + index"
               :item="item"
-            />
+            /> -->
           </div>
           <div class="slider_pagination_wrap">
             <div class="slider_pagination_left" @click="changePageLeft">
@@ -44,18 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="main_content_right_news mobile_filter">
-          <div class="content_right_news_title">
-            <h3>Новости</h3>
-          </div>
-          <div class="content_right_news_wrap">
-            <NewsCard
-              v-for="(item, index) in newsItems"
-              :key="'news-' + index"
-              :item="item"
-            ></NewsCard>
-          </div>
-        </div>
+        
       </div>
       <div class="main_content_right big_display">
         <div class="main_content_right_form">
@@ -109,18 +98,7 @@
             </div>
           </div>
         </div>
-        <div class="main_content_right_news">
-          <div class="content_right_news_title">
-            <h3>Новости</h3>
-          </div>
-          <div class="content_right_news_wrap">
-            <NewsCard
-              v-for="(item, index) in newsItems"
-              :key="'news-' + index"
-              :item="item"
-            ></NewsCard>
-          </div>
-        </div>
+        
       </div>
     </div>
     <Modal
@@ -135,15 +113,13 @@
 <script>
 import SliderCardVue from "../SliderCard/SliderCard.vue";
 import Modal from "../Modal/Modal.vue";
-import MobileCard from "../MobileCard/MobileCard.vue";
-import NewsCard from "../NewsCard/NewsCard.vue";
+
 export default {
   name: "Slider-template",
   components: {
     SliderCardVue,
     Modal,
-    MobileCard,
-    NewsCard,
+ 
   },
   data() {
     return {

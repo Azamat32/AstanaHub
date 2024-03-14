@@ -1,13 +1,13 @@
 <template>
   <div>
     <Sales></Sales>
-    <navbar></navbar>
+    <navbar @changeSlider="changeSlider"></navbar>
     <div class="container">
       <div class="main_content_wrap">
         <div class="main_welcome mobile_filter">
           <h1>Привет, Алибек! ✌️</h1>
         </div>
-        <MenuList></MenuList>
+        <MenuList @changeSlider="changeSlider"></MenuList>
         <div class="main_content_wrap_right">
           <div class="main_welcome big_display ">
             <h1>Привет, Алибек! ✌️</h1>
@@ -15,7 +15,8 @@
           <div class="mobile_image_banner">
             <img src="../assets/image 1.png" />
           </div>
-          <Slider></Slider>
+          <component :is="activeSlider"></component>
+
         </div>
       </div>
     </div>
@@ -29,6 +30,7 @@ import Footer from "../components/Footer/Footer.vue";
 import Sales from "../components/Sales/Sales.vue";
 import Slider from "../components/Slider/Slider.vue";
 import MenuList from "../components/MenuList/MenuList.vue";
+import NewsSlider from "../components/NewsSlider/NewsSlider.vue"
 export default {
   name: "MainPage",
   props: {},
@@ -38,7 +40,18 @@ export default {
     Sales,
     Slider,
     MenuList,
+    NewsSlider,
   },
+  data() {
+    return {
+      activeSlider: 'Slider' // Set default active slider
+    };
+  },
+  methods: {
+    changeSlider(slider) {
+      this.activeSlider = slider;
+    }
+  }
 };
 </script>
 
@@ -103,7 +116,7 @@ export default {
   padding-top: 12px;
   display: flex;
   gap: 50px;
-  padding-bottom: 6px;
+  padding-bottom: 80px;
   position: relative;
   flex-wrap: wrap;
 }

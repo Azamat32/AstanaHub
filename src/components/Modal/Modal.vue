@@ -169,4 +169,20 @@ export default {
 .modal_text button:hover {
   background: #7053ff;
 }
+@media (max-width: 480px) {
+  .close[data-v-47db75aa] {
+    width: 40px;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: -48px;
+    cursor: pointer;
+    background: #7b61ff;
+    padding: 15px;
+}
+}
+
 </style>
