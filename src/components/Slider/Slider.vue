@@ -1,7 +1,6 @@
 <template>
   <div class="main_content_slide">
     <div class="main_content_center">
-     
       <div class="main_tab_content">
         <div class="main_content_center_tab">
           <button
@@ -14,33 +13,35 @@
           </button>
         </div>
         <div class="main_content_slider">
-          <SliderCardVue
-            v-for="(item, index) in filteredItems"
-            :key="index"
-            :item="item"
-            @card-clicked="handleCardClick"
-          />
-          <MobileCard
-            v-for="(item, index) in filteredItems"
-            :key="'mobile-' + index"
-            :item="item"
-          />
-        </div>
-        <div class="slider_pagination_wrap">
-          <div class="slider_pagination_left" @click="changePageLeft">
-            <img src="../../assets/arraw_left.svg" alt="" />
+          <div class="main_content_slider_wrap">
+            <SliderCardVue
+              v-for="(item, index) in filteredItems"
+              :key="index"
+              :item="item"
+              @card-clicked="handleCardClick"
+            />
+            <MobileCard
+              v-for="(item, index) in filteredItems"
+              :key="'mobile-' + index"
+              :item="item"
+            />
           </div>
-          <div class="slider_pagination">
-            <span
-              v-for="pageNumber in totalPagesArray"
-              :key="pageNumber"
-              @click="changePage(pageNumber)"
-              :class="{ active: currentPage === pageNumber }"
-              >{{ pageNumber }}</span
-            >
-          </div>
-          <div class="slider_pagination_right" @click="changePageRight">
-            <img src="../../assets/arraw_right.svg" alt="" />
+          <div class="slider_pagination_wrap">
+            <div class="slider_pagination_left" @click="changePageLeft">
+              <img src="../../assets/arraw_left.svg" alt="" />
+            </div>
+            <div class="slider_pagination">
+              <span
+                v-for="pageNumber in totalPagesArray"
+                :key="pageNumber"
+                @click="changePage(pageNumber)"
+                :class="{ active: currentPage === pageNumber }"
+                >{{ pageNumber }}</span
+              >
+            </div>
+            <div class="slider_pagination_right" @click="changePageRight">
+              <img src="../../assets/arraw_right.svg" alt="" />
+            </div>
           </div>
         </div>
       </div>

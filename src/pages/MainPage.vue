@@ -127,7 +127,10 @@ export default {
 .main_content_center_tab button.active {
   background: rgba(123, 97, 255, 1);
 }
-.main_content_slider {
+.main_content_slider{
+  position: relative;
+}
+.main_content_slider_wrap {
   padding-top: 32px;
   display: grid;
   margin-bottom: 20px;
@@ -203,6 +206,9 @@ export default {
   align-items: center;
   margin-bottom: 12px;
 }
+.form_check img{
+  display: none;
+}
 .form_check_input {
   display: flex;
   justify-content: center;
@@ -216,6 +222,9 @@ export default {
 }
 .form_check_input.active {
   background: #7a6af4;
+}
+.form_check_input.active img {
+  display: block;
 }
 .range {
   color: #849b8b;
@@ -261,7 +270,7 @@ export default {
   justify-content: center;
   left: 50%;
   transform: translate(-50%, -50%);
-  bottom: 0px;
+  bottom: -100px;
 }
 .slider_pagination_left,
 .slider_pagination_right {
@@ -337,7 +346,7 @@ export default {
   .main_content_right {
     display: none;
   }
-  .main_content_slider {
+  .main_content_slider_wrap {
     grid-template-columns: 1fr;
   }
   .mobile_image_banner {
