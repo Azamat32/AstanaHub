@@ -99,7 +99,7 @@ export default {
   height: 0%;
   z-index: 5;
   bottom: -100%;
-  transition: bottom 0.8s ease, height 0.4s ease;
+  transition: bottom 0.4s ease, height 0.4s ease;
 }
 .modal.active {
   overflow: hidden;

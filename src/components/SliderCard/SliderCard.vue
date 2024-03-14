@@ -81,12 +81,11 @@ export default {
 .slider_item_hover_text {
   position: absolute;
   transition: 0.4s;
-
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   color: #fff;
   padding: 90px 14px 0px 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
-  bottom: -11%;
+  bottom: -100%;
   z-index: 2;
   height: 0%;
 }
@@ -147,7 +146,8 @@ export default {
 
 .slider_register_btn {
   background: rgba(123, 97, 255, 1);
-  border: 1px solid rgba(123, 97, 255, 1);
+  border: 1px solid rgba(237, 245, 240, 1);
+
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   padding: 10px 20px;
@@ -157,10 +157,10 @@ export default {
 }
 .slider_register_btn:hover {
   border: 1px solid rgba(237, 245, 240, 1);
-  background: rgba(123, 97, 255, 1);
+  background: rgb(105, 75, 255);
 }
 .slider_item_button .btn:hover {
-  border: 1px solid rgba(123, 97, 255, 1);
+  background: rgb(105, 75, 255);
 
 
 }
