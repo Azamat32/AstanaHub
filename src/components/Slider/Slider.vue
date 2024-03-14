@@ -44,55 +44,81 @@
             </div>
           </div>
         </div>
+        <div class="main_content_right_news mobile_filter">
+          <div class="content_right_news_title">
+            <h3>Новости</h3>
+          </div>
+          <div class="content_right_news_wrap">
+            <NewsCard
+              v-for="(item, index) in newsItems"
+              :key="'news-' + index"
+              :item="item"
+            ></NewsCard>
+          </div>
+        </div>
       </div>
       <div class="main_content_right big_display">
-        <div class="form_input">
-          <div class="form_input_text">
-            <img src="../../assets/search.svg" alt="" />
-            <input type="text" placeholder="Поиск Курсов" />
+        <div class="main_content_right_form">
+          <div class="form_input">
+            <div class="form_input_text">
+              <img src="../../assets/search.svg" alt="" />
+              <input type="text" placeholder="Поиск Курсов" />
+            </div>
+            <!-- <button><img src="../../assets/filter.svg" alt="" /></button> -->
           </div>
-          <!-- <button><img src="../../assets/filter.svg" alt="" /></button> -->
-        </div>
-        <p class="form_title">Тип обучения на платформе</p>
-        <div class="form_input">
-          <div class="form_input_select">
-            <input type="text" placeholder="Любой" />
-            <img src="../../assets/arrow.svg" alt="" />
+          <p class="form_title">Тип обучения на платформе</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <input type="text" placeholder="Любой" />
+              <img src="../../assets/arrow.svg" alt="" />
+            </div>
+          </div>
+          <div class="form_check">
+            <div
+              :class="{ form_check_input: true, active: activeInput }"
+              @click="handleCheck"
+            >
+              <img src="../../assets/check.svg" alt="" />
+            </div>
+            <p>С трудоустройством</p>
+          </div>
+          <p class="form_title">Уровень сложности</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <input type="text" placeholder="Любой" />
+              <img src="../../assets/arrow.svg" alt="" />
+            </div>
+          </div>
+          <p class="form_title">Длительность</p>
+          <p class="range">от 1 до 24 месяцев</p>
+          <div class="form_input">
+            <div class="form_input_select range_input">
+              <img
+                class="minus"
+                @click="decreaseNumber"
+                src="../../assets/minus.svg"
+                alt=""
+              />
+              <div class="range_number">{{ numberValue }}</div>
+              <img
+                class="plus"
+                @click="increaseNumber"
+                src="../../assets/plus.svg"
+                alt=""
+              />
+            </div>
           </div>
         </div>
-        <div class="form_check">
-          <div
-            :class="{ form_check_input: true, active: activeInput }"
-            @click="handleCheck"
-          >
-            <img src="../../assets/check.svg" alt="" />
+        <div class="main_content_right_news">
+          <div class="content_right_news_title">
+            <h3>Новости</h3>
           </div>
-          <p>С трудоустройством</p>
-        </div>
-        <p class="form_title">Уровень сложности</p>
-        <div class="form_input">
-          <div class="form_input_select">
-            <input type="text" placeholder="Любой" />
-            <img src="../../assets/arrow.svg" alt="" />
-          </div>
-        </div>
-        <p class="form_title">Длительность</p>
-        <p class="range">от 1 до 24 месяцев</p>
-        <div class="form_input">
-          <div class="form_input_select range_input">
-            <img
-              class="minus"
-              @click="decreaseNumber"
-              src="../../assets/minus.svg"
-              alt=""
-            />
-            <div class="range_number">{{ numberValue }}</div>
-            <img
-              class="plus"
-              @click="increaseNumber"
-              src="../../assets/plus.svg"
-              alt=""
-            />
+          <div class="content_right_news_wrap">
+            <NewsCard
+              v-for="(item, index) in newsItems"
+              :key="'news-' + index"
+              :item="item"
+            ></NewsCard>
           </div>
         </div>
       </div>
@@ -110,12 +136,14 @@
 import SliderCardVue from "../SliderCard/SliderCard.vue";
 import Modal from "../Modal/Modal.vue";
 import MobileCard from "../MobileCard/MobileCard.vue";
+import NewsCard from "../NewsCard/NewsCard.vue";
 export default {
   name: "Slider-template",
   components: {
     SliderCardVue,
     Modal,
     MobileCard,
+    NewsCard,
   },
   data() {
     return {
@@ -134,6 +162,20 @@ export default {
         { label: "Фриланс", active: false },
         { label: "Карьера", active: false },
         { label: "Все", active: true },
+      ],
+      newsItems: [
+        {
+          description:
+            "Зарабатывайте Social Coins и обменивайте их на мерч, курсы и услуги от Astana Hub",
+        },
+        {
+          description:
+            "Зарабатывайте Social Coins и обменивайте их на мерч, курсы и услуги от Astana Hub",
+        },
+        {
+          description:
+            "Зарабатывайте Social Coins и обменивайте их на мерч, курсы и услуги от Astana Hub",
+        },
       ],
       sliderItems: [
         {

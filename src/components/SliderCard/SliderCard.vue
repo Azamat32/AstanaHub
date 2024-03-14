@@ -1,5 +1,5 @@
 <template>
-  <div class="slider_item" @click="handleClick">
+  <div class="slider_item" >
     <div class="slider_item_banner">
       <img src="../../assets/test.jpg" alt="" />
     </div>
@@ -9,7 +9,7 @@
       <h2>{{ item.price }}</h2>
     </div>
     <div class="slider_item_button">
-      <button class="btn">Подробнее</button>
+      <button @click="handleClick" class="btn">Подробнее</button>
       <button class="slider_register_btn">Записаться</button>
       <!-- <button class=" btn circle">
         <svg 
@@ -67,22 +67,26 @@ export default {
   height: 100%;
 }
 .slider_item_hover_text p {
+  transition: 0.4s;
+
   font-size: 12px;
   line-height: 16px;
   font-weight: 400;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .slider_item_hover_text {
   position: absolute;
+  transition: 0.4s;
+
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   color: #fff;
-  padding: 45px 14px;
+  padding: 90px 14px 0px 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
-  bottom: -100%;
+  bottom: -11%;
   z-index: 2;
   height: 0%;
 }
@@ -127,7 +131,8 @@ export default {
 .slider_item_text h1 {
   font-weight: 700;
   font-size: 24px;
-  z-index: 2;
+  margin-bottom: 25px;
+  z-index: 4;
   position: relative;
 }
 .slider_item_button {
@@ -141,8 +146,8 @@ export default {
 }
 
 .slider_register_btn {
-  background: rgba(80, 209, 119, 1);
-  border: 1px solid rgba(80, 209, 119, 1);
+  background: rgba(123, 97, 255, 1);
+  border: 1px solid rgba(123, 97, 255, 1);
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   padding: 10px 20px;
@@ -155,7 +160,9 @@ export default {
   background: rgba(123, 97, 255, 1);
 }
 .slider_item_button .btn:hover {
-  border: 1px solid rgba(80, 209, 119, 1);
+  border: 1px solid rgba(123, 97, 255, 1);
+
+
 }
 .slider_item_button .btn {
   border: 1px solid rgba(237, 245, 240, 1);

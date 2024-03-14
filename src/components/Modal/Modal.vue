@@ -52,16 +52,15 @@ export default {
     };
   },
   methods: {
-    // togglePlayPause() {
-    //   const video = this.$refs.videoPlayer;
-    //   if (video.paused) {
-    //     video.play();
-    //   } else {
-    //     video.pause();
-    //   }
-    //   this.isPlaying = !this.isPlaying;
-    // },
-
+   
+    activateModalWithDelay() {
+      setTimeout(() => {
+        this.$nextTick(() => {
+          this.$emit("transition-started");
+          this.$emit("activate-modal");
+        });
+      }, 100);
+    },
     closeActiveModal() {
       this.$emit("close"); // Emitting a close event to the parent component
     },
@@ -69,6 +68,10 @@ export default {
   },
   computed: {
     isActive() {
+      if(this.active){
+        this.activateModalWithDelay();
+
+      }
       return this.active;
     },
   },
@@ -93,9 +96,18 @@ export default {
   background-color:rgba(0, 0, 0, 0.5);
   transition: 0.4s;
   position: fixed;
-  height: 100%;
-  transform: translateY(100%);
+  height: 0%;
   z-index: 5;
+  bottom: -100%;
+  transition: bottom 0.8s ease, height 0.4s ease;
+}
+.modal.active {
+  overflow: hidden;
+  width: 100%;
+  left: 0;
+  bottom: 0%;
+  height: 100%;
+  transition: 0.4s;
 }
 .modal_video {
   position: relative;
@@ -119,15 +131,7 @@ export default {
   cursor: pointer;
   left: 50%;
 }
-.modal.active {
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  left: 0;
-  bottom: 100%;
 
-  transition: 0.4s;
-}
 .modal_inner {
   margin: 150px auto;
   max-width: 700px;

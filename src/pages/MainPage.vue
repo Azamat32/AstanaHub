@@ -4,9 +4,12 @@
     <navbar></navbar>
     <div class="container">
       <div class="main_content_wrap">
+        <div class="main_welcome mobile_filter">
+          <h1>Привет, Алибек! ✌️</h1>
+        </div>
         <MenuList></MenuList>
         <div class="main_content_wrap_right">
-          <div class="main_welcome">
+          <div class="main_welcome big_display ">
             <h1>Привет, Алибек! ✌️</h1>
           </div>
           <div class="mobile_image_banner">
@@ -40,11 +43,11 @@ export default {
 </script>
 
 <style>
-.main_content_wrap{
+.main_content_wrap {
   display: flex;
   gap: 32px;
 }
-.main_content_wrap_right{
+.main_content_wrap_right {
   width: 80%;
 }
 .main_welcome {
@@ -67,7 +70,7 @@ export default {
   width: 15%;
 }
 .main_tab_content {
-  width: 70%;
+  width: 73%;
 }
 .menu_list button {
   display: flex;
@@ -100,7 +103,7 @@ export default {
   padding-top: 12px;
   display: flex;
   gap: 50px;
-  padding-bottom: 84px;
+  padding-bottom: 6px;
   position: relative;
   flex-wrap: wrap;
 }
@@ -127,7 +130,7 @@ export default {
 .main_content_center_tab button.active {
   background: rgba(123, 97, 255, 1);
 }
-.main_content_slider{
+.main_content_slider {
   position: relative;
 }
 .main_content_slider_wrap {
@@ -138,7 +141,7 @@ export default {
   gap: 16px;
 }
 .main_content_right {
-  width: 25%;
+  width: 22%;
 }
 .form_input {
   display: flex;
@@ -149,12 +152,12 @@ export default {
   position: relative;
 }
 .form_input_text {
-    width: 100%;
-  }
-  .form_input_text input {
-    width: 100%;
-    border-radius: 6px;
-  }
+  width: 100%;
+}
+.form_input_text input {
+  width: 100%;
+  border-radius: 6px;
+}
 .form_input_text img {
   position: absolute;
   left: 5px;
@@ -206,7 +209,7 @@ export default {
   align-items: center;
   margin-bottom: 12px;
 }
-.form_check img{
+.form_check img {
   display: none;
 }
 .form_check_input {
@@ -252,7 +255,14 @@ export default {
   top: 10px;
   cursor: pointer;
 }
-
+.content_right_news_title {
+  margin-bottom: 16px;
+}
+.content_right_news_title h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: rgba(3, 26, 10, 1);
+}
 .slider_pagination {
   display: flex;
   list-style: none;
@@ -311,11 +321,25 @@ export default {
 .mobile_filter {
   display: none;
 }
+@media (max-width: 900px) {
+  .main_content_slider_wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (max-width: 1285px) {
-  .main_content_wrap{
+  .main_content_wrap {
     flex-wrap: wrap;
   }
-  .main_content_wrap_right{
+  .main_content_right_news {
+    margin-top: 100px;
+  }
+  .content_right_news_wrap {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+  .main_content_wrap_right {
     width: 100%;
   }
   .main_tab_content {
@@ -342,6 +366,13 @@ export default {
   }
 }
 @media (max-width: 480px) {
+  .content_right_news_wrap {
+    grid-template-columns: 1fr;
+    display: grid;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+ 
   .main_left,
   .main_content_right {
     display: none;
