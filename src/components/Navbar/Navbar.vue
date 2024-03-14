@@ -150,14 +150,24 @@ export default {
       this.$emit("changeSlider", sliderName); // Emitting the event with the selected slider name
       this.isActiveBtn = !this.isActiveBtn;
       this.isActiveMenu = !this.isActiveMenu;
+      this.enableBodyScroll()
+
     },
     handleMenu() {
       this.isActiveBtn = !this.isActiveBtn;
       this.isActiveMenu = !this.isActiveMenu;
+      this.disableBodyScroll()
     },
     handleCloseMenu() {
       this.isActiveBtn = !this.isActiveBtn;
       this.isActiveMenu = !this.isActiveMenu;
+      this.enableBodyScroll()
+    },
+    disableBodyScroll() {
+      document.body.style.overflow = "hidden";
+    },
+    enableBodyScroll() {
+      document.body.style.overflow = "auto";
     },
   },
 };

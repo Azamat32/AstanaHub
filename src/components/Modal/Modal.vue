@@ -182,7 +182,11 @@ export default {
     cursor: pointer;
     background: #7b61ff;
     padding: 15px;
+   
 }
+.modal{
+      padding: 14px;
+    }
 }
 
 </style>
