@@ -1,6 +1,7 @@
 <template>
   <div class="slider_item" >
     <div class="slider_item_banner">
+        <div class="slider_banner_bg"></div>
       <img src="../../assets/test.jpg" alt="" />
     </div>
     <div class="slider_item_text">
@@ -65,6 +66,15 @@ export default {
   bottom: 0;
   z-index: 2;
   height: 100%;
+
+}
+.slider_banner_bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background: #000;
+  opacity: 0.3;
 }
 .slider_item_hover_text p {
   transition: 0.4s;
@@ -147,7 +157,7 @@ export default {
 .slider_register_btn {
   background: rgba(123, 97, 255, 1);
   border: 1px solid rgba(237, 245, 240, 1);
-
+  text-align: center;
   color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   padding: 10px 20px;
