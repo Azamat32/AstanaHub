@@ -201,6 +201,7 @@ export default {
 .form_input_select {
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 .form_input_select input {
   border-radius: 6px;
