@@ -100,6 +100,8 @@ export default {
   z-index: 5;
   bottom: -100%;
   transition: bottom 0.4s ease, height 0.4s ease;
+  animation: modalShow 0.4s ease forwards;
+
 }
 .modal.active {
   overflow: hidden;
@@ -188,5 +190,12 @@ export default {
       padding: 14px;
     }
 }
-
+@keyframes modalShow {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
 </style>
