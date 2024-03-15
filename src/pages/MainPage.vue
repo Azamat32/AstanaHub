@@ -204,17 +204,18 @@ export default {
 }
 .form_input_select input {
   border-radius: 6px;
-  text-indent: 5px;
-  padding: 10px 12px;
-  width: 100%;
-
+  /* padding: 10px 12px; */
+  /* width: 100%; */
   border-radius: 6px;
   border: none;
+
+
 }
-.form_input_select img {
-  position: absolute;
-  right: 10px;
-  top: 15px;
+.form_input_select input::placeholder{
+  color: rgba(132, 155, 139, 1);
+}
+.vs__clear{
+  display: none;
 }
 .form_check {
   display: flex;
@@ -252,6 +253,7 @@ export default {
   padding: 12px;
   background: #fff;
   border-radius: 6px;
+  position: relative;
 }
 .range_number {
   color: rgba(132, 155, 139, 1);
@@ -263,10 +265,13 @@ export default {
   left: 5px;
   top: 15px;
   cursor: pointer;
+  position: absolute;
 }
 .range_input .plus {
   top: 10px;
   cursor: pointer;
+  position: absolute;
+  right:0;
 }
 .content_right_news_title {
   margin-bottom: 16px;

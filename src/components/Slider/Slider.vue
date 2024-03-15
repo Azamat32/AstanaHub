@@ -44,7 +44,6 @@
             </div>
           </div>
         </div>
-        
       </div>
       <div class="main_content_right big_display">
         <div class="main_content_right_form">
@@ -58,8 +57,9 @@
           <p class="form_title">Тип обучения на платформе</p>
           <div class="form_input">
             <div class="form_input_select">
-              <input type="text" placeholder="Любой" />
-              <img src="../../assets/arrow.svg" alt="" />
+              <form>
+                <v-select :options="countries" label="Любой" placeholder="Любой"></v-select>
+              </form>
             </div>
           </div>
           <div class="form_check">
@@ -74,8 +74,9 @@
           <p class="form_title">Уровень сложности</p>
           <div class="form_input">
             <div class="form_input_select">
-              <input type="text" placeholder="Любой" />
-              <img src="../../assets/arrow.svg" alt="" />
+              <form>
+                <v-select :options="countries" label="Любой" placeholder="Любой" ></v-select>
+              </form>
             </div>
           </div>
           <p class="form_title">Длительность</p>
@@ -98,7 +99,6 @@
             </div>
           </div>
         </div>
-        
       </div>
     </div>
     <Modal
@@ -113,16 +113,19 @@
 <script>
 import SliderCardVue from "../SliderCard/SliderCard.vue";
 import Modal from "../Modal/Modal.vue";
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
 
 export default {
   name: "Slider-template",
   components: {
     SliderCardVue,
     Modal,
- 
+    vSelect,
   },
   data() {
     return {
+      countries: ["Легкий", "Средний","Тяжелый", "Любой"],
       filteredItems: [],
       activeInput: false,
       itemsPerPage: 12,
@@ -377,4 +380,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.vs__dropdown-toggle{
+  border: none;
+}
+</style>

@@ -171,7 +171,7 @@ export default {
 .modal_text button:hover {
   background: #7053ff;
 }
-@media (max-width: 480px) {
+@media (max-width: 780px) {
   .close[data-v-47db75aa] {
     width: 40px;
     border-radius: 99px;

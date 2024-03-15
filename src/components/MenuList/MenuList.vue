@@ -50,67 +50,76 @@
     </div>
     <div class="main_content_right mobile_filter">
       <div class="form_input">
-        <div class="form_input_text">
-          <img src="../../assets/search.svg" alt="" />
-          <input type="text" placeholder="Поиск Курсов" />
-        </div>
-        <!-- <button><img src="../../assets/filter.svg" alt="" /></button> -->
-      </div>
-      <p class="form_title">Тип обучения на платформе</p>
-      <div class="form_input">
-        <div class="form_input_select">
-          <input type="text" placeholder="Любой" />
-          <img src="../../assets/arrow.svg" alt="" />
-        </div>
-      </div>
-      <div class="form_check">
-        <div
-          :class="{ form_check_input: true, active: activeInput }"
-          @click="handleCheck"
-        >
-          <img src="../../assets/check.svg" alt="" />
-        </div>
-        <p>С трудоустройством</p>
-      </div>
-      <p class="form_title">Уровень сложности</p>
-      <div class="form_input">
-        <div class="form_input_select">
-          <input type="text" placeholder="Любой" />
-          <img src="../../assets/arrow.svg" alt="" />
-        </div>
-      </div>
-      <p class="form_title">Длительность</p>
-      <p class="range">от 1 до 24 месяцев</p>
-      <div class="form_input">
-        <div class="form_input_select range_input">
-          <img
-            class="minus"
-            @click="decreaseNumber"
-            src="../../assets/minus.svg"
-            alt=""
-          />
-          <div class="range_number">{{ numberValue }}</div>
-          <img
-            class="plus"
-            @click="increaseNumber"
-            src="../../assets/plus.svg"
-            alt=""
-          />
-        </div>
-      </div>
+            <div class="form_input_text">
+              <img src="../../assets/search.svg" alt="" />
+              <input type="text" placeholder="Поиск Курсов" />
+            </div>
+            <!-- <button><img src="../../assets/filter.svg" alt="" /></button> -->
+          </div>
+          <p class="form_title">Тип обучения на платформе</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <form>
+                <v-select :options="countries" label="Любой" placeholder="Любой"></v-select>
+              </form>
+            </div>
+          </div>
+          <div class="form_check">
+            <div
+              :class="{ form_check_input: true, active: activeInput }"
+              @click="handleCheck"
+            >
+              <img src="../../assets/check.svg" alt="" />
+            </div>
+            <p>С трудоустройством</p>
+          </div>
+          <p class="form_title">Уровень сложности</p>
+          <div class="form_input">
+            <div class="form_input_select">
+              <form>
+                <v-select :options="countries" label="Любой" placeholder="Любой" ></v-select>
+              </form>
+            </div>
+          </div>
+          <p class="form_title">Длительность</p>
+          <p class="range">от 1 до 24 месяцев</p>
+          <div class="form_input">
+            <div class="form_input_select range_input">
+              <img
+                class="minus"
+                @click="decreaseNumber"
+                src="../../assets/minus.svg"
+                alt=""
+              />
+              <div class="range_number">{{ numberValue }}</div>
+              <img
+                class="plus"
+                @click="increaseNumber"
+                src="../../assets/plus.svg"
+                alt=""
+              />
+            </div>
+          </div>
     </div>
   </div>
 </template>
 
 <script>
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+
 export default {
   name: "MenuList-template",
   data() {
     return {
       numberValue: 1,
       activeInput: false,
-      activeSlider: 'Slider'
+      activeSlider: 'Slider',
+      countries: ["Легкий", "Средний","Тяжелый", "Любой"],
     };
+  },
+  components : {
+    vSelect,
   },
   methods: {
     increaseNumber() {
