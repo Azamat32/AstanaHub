@@ -190,6 +190,7 @@ export default {
   gap: 13px;
   position: absolute;
   bottom: 0;
+  width: 100%;
   z-index: 4;
 }
 
@@ -252,7 +253,7 @@ export default {
     width: 50%;
   }
   .slider_register_btn{
-    width: 30%;
+    width: 45%;
 
   }
 }
