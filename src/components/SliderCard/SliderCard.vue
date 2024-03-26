@@ -7,8 +7,7 @@
     <div class="slider_item_text">
       <div class="slider_item_text_category">
         <span>{{ item.category }}</span>
-        <span>Предпринимательство</span>
-        <span>Фриланс</span>
+
 
       </div>
       <h1>{{ item.title }}</h1>
