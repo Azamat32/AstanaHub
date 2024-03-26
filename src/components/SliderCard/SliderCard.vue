@@ -51,6 +51,12 @@ export default {
     // Adjust the position of the hover text initially
     this.adjustHoverTextPosition();
   },
+  watch: {
+      immediate: true,
+      handler() {
+        this.adjustHoverTextPosition();
+      },
+  },
   updated() {
     // Adjust the position of the hover text when the component updates
     this.adjustHoverTextPosition();
