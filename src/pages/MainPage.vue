@@ -146,7 +146,7 @@ export default {
 .main_content_slider {
   position: relative;
 }
-.main_content_slider_wrap {
+.main_content_slider_wrap_inner {
   padding-top: 32px;
   display: grid;
   margin-bottom: 20px;
@@ -341,7 +341,7 @@ export default {
   display: none;
 }
 @media (max-width: 900px) {
-  .main_content_slider_wrap {
+  .main_content_slider_wrap_inner {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -396,7 +396,7 @@ export default {
   .main_content_right {
     display: none;
   }
-  .main_content_slider_wrap {
+  .main_content_slider_wrap_inner {
     grid-template-columns: 1fr;
   }
   .mobile_image_banner {

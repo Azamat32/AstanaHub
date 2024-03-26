@@ -1,11 +1,16 @@
 <template>
-  <div class="slider_item" >
+  <div class="slider_item" ref="sliderItem">
     <div class="slider_item_banner">
         <div class="slider_banner_bg"></div>
       <img src="../../assets/test.jpg" alt="" />
     </div>
     <div class="slider_item_text">
-      <span>{{ item.category }}</span>
+      <div class="slider_item_text_category">
+        <span>{{ item.category }}</span>
+        <span>Предпринимательство</span>
+        <span>Фриланс</span>
+
+      </div>
       <h1>{{ item.title }}</h1>
       <h2>{{ item.price }}</h2>
     </div>
@@ -43,9 +48,31 @@ export default {
       required: true,
     },
   },
+  mounted() {
+    // Adjust the position of the hover text initially
+    this.adjustHoverTextPosition();
+  },
+  updated() {
+    // Adjust the position of the hover text when the component updates
+    this.adjustHoverTextPosition();
+  },
   methods: {
     handleClick() {
       this.$emit("card-clicked", this.item); // Emitting an event with the item data
+    },
+    adjustHoverTextPosition() {
+      const sliderItem = this.$refs.sliderItem;
+      const sliderItemTextTitle = sliderItem.querySelector(".slider_item_text h1").offsetHeight;
+      const sliderItemTextSubTitle = sliderItem.querySelector(".slider_item_text h2").offsetHeight;
+      const sliderItemTextCategory = sliderItem.querySelector(".slider_item_text_category").offsetHeight;
+
+      const sliderHoverText = sliderItem.querySelector(".slider_item_hover_text p");
+      // const sliderCardHeight = sliderItem.offsetHeight;
+      // const sliderItemText = sliderItem.querySelector(".slider_item_text");
+        
+      const textHeight = sliderItemTextTitle + sliderItemTextSubTitle + sliderItemTextCategory;
+      // Set the top position of the hover text
+      sliderHoverText.style.marginTop  = textHeight + "px";
     },
   },
 };
@@ -61,6 +88,16 @@ export default {
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   user-select: none;
+
+}
+.slider_item_text_category{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 13px;
+
+}
+.slider_item_text_category span{
 }
 .slider_item:hover .slider_item_hover_text {
   bottom: 0;
@@ -93,7 +130,7 @@ export default {
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   color: #fff;
-  padding: 90px 14px 0px 14px;
+  padding:10px 14px 0px 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
   bottom: -100%;
   z-index: 2;
@@ -124,7 +161,7 @@ export default {
   border: 1px solid rgba(237, 245, 240, 1);
   border-radius: 6px;
   padding: 3px 4px;
-  margin-bottom: 13px;
+  /* margin-bottom: 13px; */
   display: block;
   width: fit-content;
   z-index: 4;
@@ -135,6 +172,7 @@ export default {
   font-weight: 600;
   font-size: 16px;
   z-index: 2;
+  margin-bottom: 55px;
   position: relative;
 }
 .slider_item_text h1 {
@@ -142,6 +180,7 @@ export default {
   font-size: 24px;
   margin-bottom: 25px;
   z-index: 4;
+  word-wrap:break-word;
   position: relative;
 }
 .slider_item_button {
@@ -150,7 +189,8 @@ export default {
   display: flex;
   align-items: center;
   gap: 13px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   z-index: 4;
 }
 

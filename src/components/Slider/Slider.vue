@@ -14,17 +14,16 @@
         </div>
         <div class="main_content_slider">
           <div class="main_content_slider_wrap">
-            <SliderCardVue
+            <div class="main_content_slider_wrap_inner">
+              <SliderCardVue
               v-for="(item, index) in filteredItems"
               :key="index"
               :item="item"
               @card-clicked="handleCardClick"
             />
-            <!-- <MobileCard
-              v-for="(item, index) in filteredItems"
-              :key="'mobile-' + index"
-              :item="item"
-            /> -->
+            </div>
+           
+            
           </div>
           <div class="slider_pagination_wrap">
             <div class="slider_pagination_left" @click="changePageLeft">
@@ -128,7 +127,7 @@ export default {
       countries: ["Легкий", "Средний","Тяжелый", "Любой"],
       filteredItems: [],
       activeInput: false,
-      itemsPerPage: 12,
+      itemsPerPage: 9,
       numberValue: 1,
       currentPage: 1,
       activeItem: null,
@@ -159,14 +158,14 @@ export default {
       sliderItems: [
         {
           category: "Предпринимательство",
-          title: "Beta Career",
+          title: "Базовая компьютерная грамотность",
           price: "от 33 305 ₸",
           description:
             "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
         },
         {
           category: "Фриланс",
-          title: "Low Code",
+          title: "Swift программирование",
           price: "от 33 305 ₸",
           description:
             "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",

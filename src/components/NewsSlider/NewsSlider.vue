@@ -4,12 +4,14 @@
       <div class="main_tab_content">
         <div class="main_content_slider">
           <div class="main_content_slider_wrap">
-            <NewsCard
-              v-for="(item, index) in filteredItems"
-              :key="index"
-              :item="item"
-              @card-clicked="handleCardClick"
-            />
+            <div class="main_content_slider_wrap_inner">
+              <NewsCard
+                v-for="(item, index) in filteredItems"
+                :key="index"
+                :item="item"
+                @card-clicked="handleCardClick"
+              />
+            </div>
           </div>
           <div class="slider_pagination_wrap">
             <div class="slider_pagination_left" @click="changePageLeft">
@@ -45,7 +47,7 @@ export default {
     return {
       filteredItems: [],
       activeInput: false,
-      itemsPerPage: 12,
+      itemsPerPage: 9,
       numberValue: 1,
       currentPage: 1,
       activeItem: null,
