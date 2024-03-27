@@ -52,10 +52,12 @@ export default {
     this.adjustHoverTextPosition();
   },
   watch: {
+    item: {
       immediate: true,
       handler() {
         this.adjustHoverTextPosition();
       },
+    },
   },
   updated() {
     // Adjust the position of the hover text when the component updates
@@ -66,7 +68,13 @@ export default {
       this.$emit("card-clicked", this.item); // Emitting an event with the item data
     },
     adjustHoverTextPosition() {
+      
       const sliderItem = this.$refs.sliderItem;
+      if (!sliderItem) {
+    // Return early if sliderItem is undefined
+    return;
+  }
+
       const sliderItemTextTitle = sliderItem.querySelector(".slider_item_text h1").offsetHeight;
       const sliderItemTextSubTitle = sliderItem.querySelector(".slider_item_text h2").offsetHeight;
       const sliderItemTextCategory = sliderItem.querySelector(".slider_item_text_category").offsetHeight;

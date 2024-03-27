@@ -4,13 +4,14 @@
     <navbar @changeSlider="changeSlider"></navbar>
     <div class="container">
       <div class="main_content_wrap">
-        <div class="main_welcome mobile_filter">
-          <h1>Привет, Алибек! ✌️</h1>
-        </div>
+        
         <MenuList @changeSlider="changeSlider"></MenuList>
         <div class="main_content_wrap_right">
-          <div class="main_welcome big_display ">
-            <h1>Привет, Алибек! ✌️</h1>
+          <div class="main_content_first_section">
+            <MainPageFirstSection></MainPageFirstSection>
+            <MainPageSecondSection></MainPageSecondSection>
+            <MainPageThirdSection></MainPageThirdSection>
+            <MainPageFourSection></MainPageFourSection>
           </div>
           <!-- <div class="mobile_image_banner">
             <img src="../assets/image 1.png" />
@@ -31,6 +32,11 @@ import Sales from "../components/Sales/Sales.vue";
 import Slider from "../components/Slider/Slider.vue";
 import MenuList from "../components/MenuList/MenuList.vue";
 import NewsSlider from "../components/NewsSlider/NewsSlider.vue"
+import MainPageFirstSection from "../components/MainPageSections/MainPageFirstSection.vue"
+import MainPageSecondSection from "../components/MainPageSections/MainPageSecondSection.vue"
+import MainPageThirdSection from "../components/MainPageSections/MainPageThirdSection.vue"
+import MainPageFourSection from "../components/MainPageSections/MainPageFourSection.vue"
+
 export default {
   name: "MainPage",
   props: {},
@@ -41,6 +47,10 @@ export default {
     Slider,
     MenuList,
     NewsSlider,
+    MainPageFirstSection,
+    MainPageSecondSection,
+    MainPageThirdSection,
+    MainPageFourSection,
   },
   data() {
     return {
