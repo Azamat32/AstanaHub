@@ -194,7 +194,7 @@
     background: #7053ff;
   }
   @media (max-width: 780px) {
-    .close[data-v-47db75aa] {
+    .close {
       width: 40px;
       border-radius: 99px;
       display: flex;
