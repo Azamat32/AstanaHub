@@ -62,6 +62,7 @@ export default {
 }
 .four_section_title {
   text-align: center;
+  margin-bottom: 42px;
 }
 .four_section_title h1 {
   font-weight: 700;
@@ -110,6 +111,7 @@ export default {
   text-align: center;
   bottom: 10px;
   width: 100%;
+  padding: 5px 20px;
 }
 .four_card_text h6 {
   font-size: 18px;
@@ -118,5 +120,17 @@ export default {
 .four_card_text p {
   font-size: 14px;
   font-weight: 400;
+}
+@media  (max-width: 780px){
+  .four_section_wrap{
+    grid-template-columns: 1fr 1fr;
+
+  }
+}
+@media  (max-width: 480px){
+  .four_section_wrap{
+    grid-template-columns:  1fr;
+    height: 100vh;
+  }
 }
 </style>

@@ -66,7 +66,7 @@
 .third_section_right{
     display: grid;
     grid-template-columns: 1fr  1fr;
-  gap: 16px;
+    gap: 16px;
 }
 .third_section_card{
     background: linear-gradient(90deg, #9747FF 0%, #7B43FC 49.5%, #563CF4 99.99%);
@@ -94,6 +94,18 @@
     color: #fff;
     font-weight:600;
     font-size: 15px
+}
+@media  (max-width: 780px){
+.third_section{
+    flex-direction: column;
+}
+
+}
+@media  (max-width: 480px){
+.third_section_right{
+    grid-template-columns:  1fr;
+
+}
 }
   </style>
   

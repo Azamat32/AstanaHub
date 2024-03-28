@@ -182,6 +182,7 @@ export default {
   height: 100%;
   z-index: 5;
   position: relative;
+  padding: 40px;
 }
 .slide_content span {
   font-size: 16px;
@@ -252,5 +253,19 @@ export default {
 }
 .padding_span.active{
     background: #7B61FF;
+}
+@media  (max-width: 780px){
+  .first_section{
+      flex-wrap: wrap;
+  }
+  .swiper{
+    width: 100%;
+  }
+  .first_section_second{
+    width: 100%;
+  }
+}
+@media  (max-width: 480px){
+
 }
 </style>

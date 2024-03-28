@@ -48,4 +48,21 @@ export default {
     font-size: 18px;
     font-weight:600;
 }
+
+@media  (max-width: 780px){
+
+}
+@media  (max-width: 480px){
+  .second_sectin_title{
+    flex-direction: column;
+    display: flex;
+    gap: 42px;
+  }
+  .second_sectin_title h1{
+    width: 100%;
+  }
+  .second_sectin_title p{
+    width: 100%;
+  }
+}
 </style>
