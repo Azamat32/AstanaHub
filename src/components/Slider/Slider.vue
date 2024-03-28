@@ -108,7 +108,6 @@
               :max="max"
               :tooltip="'always'"
               :dragable-range="true"
-              @change="handleChange"
             />
           </div>
         </div>
