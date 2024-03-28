@@ -362,12 +362,12 @@ export default {
   .main_content_slider_wrap_inner {
     grid-template-columns: 1fr 1fr;
   }
+  
+}
+@media (max-width: 1285px) {
   .main_content_center{
       flex-direction: column-reverse;
   }
-}
-@media (max-width: 1285px) {
-  
   .main_content_right_news {
     margin-top: 100px;
   }

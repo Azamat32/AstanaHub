@@ -22,8 +22,6 @@
                 @card-clicked="handleCardClick"
               />
             </div>
-
-            
           </div>
           <div class="slider_pagination_wrap">
             <div class="slider_pagination_left" @click="changePageLeft">
@@ -88,8 +86,8 @@
           </div>
           <p class="form_title">Длительность</p>
           <p class="range">от 1 до 24 месяцев</p>
-          <div class="form_input">
-            <div class="form_input_select range_input">
+          <div class="form_input_range">
+            <!-- <div class="form_input_select range_input">
               <img
                 class="minus"
                 @click="decreaseNumber"
@@ -103,14 +101,15 @@
                 src="../../assets/plus.svg"
                 alt=""
               />
-            </div>
-            <v-range-slider
-              hide-details
-              hint="Im a hint"
-              inverse-label
-              max="45"
-              min="-100"
-            ></v-range-slider>
+            </div> -->
+            <vue-slider
+              v-model="range"
+              :min="min"
+              :max="max"
+              :tooltip="'always'"
+              :dragable-range="true"
+              @change="handleChange"
+            />
           </div>
         </div>
       </div>
@@ -129,6 +128,8 @@ import SliderCardVue from "../SliderCard/SliderCard.vue";
 import Modal from "../Modal/Modal.vue";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import VueSlider from "vue-slider-component";
+import "vue-slider-component/theme/default.css";
 
 export default {
   name: "Slider-template",
@@ -136,9 +137,14 @@ export default {
     SliderCardVue,
     Modal,
     vSelect,
+    VueSlider,
   },
   data() {
     return {
+      range: [1, 24], // Initial range values
+      min: 1,
+      max: 24,
+
       countries: ["Легкий", "Средний", "Тяжелый", "Любой"],
       filteredItems: [],
       activeInput: false,
@@ -397,5 +403,9 @@ export default {
 <style>
 .vs__dropdown-toggle {
   border: none;
+}
+.vue-slider-process{
+  background: #7B61FF;
+
 }
 </style>
