@@ -6,7 +6,7 @@
     <div class="four_section_wrap">
       <div class="four_section_card">
         <div class="four_card_img">
-          <img src="../../assets/four1.png" alt="" />
+          <img src="../../assets/academy.png" alt="" />
         </div>
         <div class="four_section_overflow"></div>
         <div class="four_card_text">
@@ -71,7 +71,7 @@ export default {
 .four_section_wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 45vh;
+  /* height: 45vh; */
   gap: 32px;
 }
 .four_section_card {
@@ -84,14 +84,14 @@ export default {
 .four_card_img {
   width: 100%;
   height: 100%;
-  position: absolute;
+  /* position: absolute; */
   z-index: -1;
 }
 .four_card_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
+  /* position: absolute; */
 }
 .four_section_overflow {
   width: 100%;
@@ -123,7 +123,7 @@ export default {
 }
 @media  (max-width: 780px){
   .four_section_wrap{
-    height: 70vh;
+    /* height: 70vh; */
 
     grid-template-columns: 1fr 1fr;
   }
@@ -132,7 +132,7 @@ export default {
 @media  (max-width: 480px){
   .four_section_wrap{
     grid-template-columns:  1fr;
-    height: 100vh;
+    /* height: 100vh; */
   }
 }
 </style>

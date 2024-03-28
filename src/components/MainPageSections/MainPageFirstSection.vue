@@ -130,6 +130,7 @@ export default {
   left: 0;
   right: 0;
   margin: 0 auto;
+  width: 100%;
 }
 .first_section_second_text {
   padding: 32px 32px 32px 0px;

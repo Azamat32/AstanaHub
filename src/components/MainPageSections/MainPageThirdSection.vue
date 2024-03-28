@@ -73,7 +73,6 @@
     padding: 11px;
     position: relative;
     border-radius:12px;
-    height:25vh;
     max-width: 100%;
     overflow: hidden;
     width: 100%;

@@ -407,4 +407,15 @@ export default {
   background: #7B61FF;
 
 }
+.vue-slider-dot{
+  border: 1px solid #000;
+  padding: 6px;
+  border-radius: 50px;
+  width: 28px !important;
+  height: 28px !important;
+
+}
+.vue-slider-dot-handle{
+  background: #000;
+}
 </style>
