@@ -2,8 +2,8 @@
   <div class="main_left">
     <div :class="{ menu_list: true, padding_top: isFixed }">
       <button
-        @click="selectSlider('Slider')"
-        :class="{ active: activeSlider === 'Slider' }"
+      @click="selectPage('MainPage')" 
+      :class="{ active: activePage === 'MainPage' }"
       >
         <svg
           width="18"
@@ -20,8 +20,8 @@
         Каталог курсов
       </button>
       <button
-        @click="selectSlider('NewsSlider')"
-        :class="{ active: activeSlider === 'NewsSlider' }"
+      @click="selectPage('NewsPage')" 
+      :class="{ active: activePage === 'NewsPage' }"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@
 
         Новости
       </button>
-      <button>
+      <button  @click="selectPage('VebinarsPage')" :class="{ active: activePage === 'VebinarsPage' }">
         <svg
           width="18"
           height="20"
@@ -70,6 +70,7 @@ export default {
       numberValue: 1,
       activeInput: false,
       activeSlider: "Slider",
+      activePage: "MainPage",
     };
   },
  
@@ -87,10 +88,12 @@ export default {
     handleCheck() {
       this.activeInput = !this.activeInput;
     },
-    selectSlider(sliderName) {
-      this.activeSlider = sliderName;
-      this.$emit("changeSlider", sliderName); // Emitting the event with the selected slider name
+   
+    selectPage(pageName) {
+      this.activePage = pageName;
+      this.$emit("changePage", pageName); 
     },
+   
     handleScroll() {
       if (window.scrollY > 60) {
         this.isFixed = true; // Add the class when scrolled down by 80px
@@ -121,12 +124,17 @@ export default {
 
 @media (max-width: 2600px){
   .menu_list {
-    width: 9%;
+    width: 8%;
+
+}}
+@media (max-width: 2300px){
+  .menu_list {
+    width: 8%;
 
 }}
 @media (max-width: 1900px){
   .menu_list {
-    width: 12%;
+    width: 9%;
 
 }}
 @media (max-width: 1285px){

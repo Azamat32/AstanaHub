@@ -333,16 +333,7 @@ export default {
         this.currentPage += 1;
       }
     },
-    increaseNumber() {
-      if (this.numberValue < 24) {
-        this.numberValue = this.numberValue + 1;
-      }
-    },
-    decreaseNumber() {
-      if (this.numberValue > 1) {
-        this.numberValue = this.numberValue - 1;
-      }
-    },
+   
     handleCardClick(clickedItem) {
       this.activeItem = clickedItem;
       this.showActiveModal = true;

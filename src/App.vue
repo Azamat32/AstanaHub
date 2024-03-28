@@ -1,13 +1,12 @@
 <template>
   <div id="app">
     <Sales></Sales>
-    <navbar @changeSlider="changeSlider"></navbar>
+    <navbar @changePage="changePage"></navbar>
     <div class="container">
       <div class="main_content_wrap">
         
-        <MenuList @changeSlider="changeSlider"></MenuList>
-        <MainPage/>
-        
+        <MenuList   @changePage="changePage"></MenuList>
+        <component :is="activePage"></component>
       </div>
     </div>
     <Footer></Footer>
@@ -20,11 +19,14 @@ import Navbar from "./components/Navbar/Navbar.vue";
 import Footer from "./components/Footer/Footer.vue";
 import Sales from "./components/Sales/Sales.vue";
 import MenuList from "./components/MenuList/MenuList.vue";
-
+import VebinarsPage from './pages/VebinarsPage.vue';
+import NewsPage from './pages/NewsPage.vue';
 export default {
   name: 'App',
   components: {
     MainPage,
+    VebinarsPage,
+    NewsPage,
     Navbar,
     Footer,
     Sales,
@@ -32,14 +34,16 @@ export default {
   },
   data() {
     return {
-      activeSlider: 'Slider',
+      activePage: 'MainPage'
     };
   },
   methods: {
     changeSlider(slider) {
       this.activeSlider = slider;
     },
-    
+    changePage(page) {
+      this.activePage = page;
+    },
   },
 }
 </script>
@@ -53,8 +57,12 @@ export default {
   box-sizing: border-box;
   font-family: "Nunito Sans";
 }
+#app{
+  position: relative;
+}
 body{
     background: #FAFAFA;
+    min-height: 100vh;
 }
 .container {
   max-width: 1280px;

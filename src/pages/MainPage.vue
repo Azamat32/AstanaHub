@@ -10,10 +10,8 @@
             <MainPageThirdSection></MainPageThirdSection>
             <MainPageFourSection></MainPageFourSection>
           </div>
-          <!-- <div class="mobile_image_banner">
-            <img src="../assets/image 1.png" />
-          </div> -->
-          <component :is="activeSlider"></component>
+          
+          <Slider></Slider>
 
         </div>
       </div>
@@ -22,11 +20,8 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar/Navbar.vue";
-import Sales from "../components/Sales/Sales.vue";
+
 import Slider from "../components/Slider/Slider.vue";
-import MenuList from "../components/MenuList/MenuList.vue";
-import NewsSlider from "../components/NewsSlider/NewsSlider.vue"
 import MainPageFirstSection from "../components/MainPageSections/MainPageFirstSection.vue"
 import MainPageSecondSection from "../components/MainPageSections/MainPageSecondSection.vue"
 import MainPageThirdSection from "../components/MainPageSections/MainPageThirdSection.vue"
@@ -34,27 +29,19 @@ import MainPageFourSection from "../components/MainPageSections/MainPageFourSect
 
 export default {
   name: "MainPage",
-  props: {},
+ 
   components: {
-    Navbar,
-    Sales,
     Slider,
-    MenuList,
-    NewsSlider,
     MainPageFirstSection,
     MainPageSecondSection,
     MainPageThirdSection,
     MainPageFourSection,
   },
-  data() {
-    return {
-      activeSlider: 'Slider',
-
-    };
-  },
+  
   methods: {
     changeSlider(slider) {
-      this.activeSlider = slider;
+      this.$emit('update:activeSlider', slider);
+
     },
     
   },
@@ -373,13 +360,14 @@ export default {
 }
 .main_left {
   width: 20%;
+  margin-right: 80px;
 }
 .menu_list {
   width: 20%;
 
 }
   .main_content_wrap_right {
-    width: 70%;
+    width: 100%;
   }
   .main_tab_content {
     width: 100%;

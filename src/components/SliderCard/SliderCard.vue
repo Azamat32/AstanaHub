@@ -12,7 +12,7 @@
       <h2>{{ item.price }}</h2>
     </div>
     <div class="slider_item_button">
-      <button class="slider_register_btn">Подробнее</button>
+      <button class="slider_register_btn" @click="handleClick">Подробнее</button>
       <!-- <button class=" btn circle">
         <svg 
           width="14"
