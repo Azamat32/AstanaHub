@@ -7,7 +7,7 @@
         
         <MenuList @changeSlider="changeSlider"></MenuList>
         <div class="main_content_wrap_right">
-          <div class="main_content_first_section">
+          <div class="main_content_sections">
             <MainPageFirstSection></MainPageFirstSection>
             <MainPageSecondSection></MainPageSecondSection>
             <MainPageThirdSection></MainPageThirdSection>
@@ -54,22 +54,26 @@ export default {
   },
   data() {
     return {
-      activeSlider: 'Slider' // Set default active slider
+      activeSlider: 'Slider',
+
     };
   },
   methods: {
     changeSlider(slider) {
       this.activeSlider = slider;
-    }
-  }
+    },
+    
+  },
+ 
 };
 </script>
 
 <style>
 .main_content_wrap {
   display: flex;
-  gap: 32px;
+  gap: 14px;
 }
+
 .main_content_wrap_right {
   width: 80%;
 }
@@ -91,6 +95,7 @@ export default {
 }
 .main_left {
   width: 15%;
+  /* transform: scale(1)  */
 }
 .main_tab_content {
   width: 73%;
@@ -137,11 +142,12 @@ export default {
   gap: 12px;
 }
 .main_content_center_tab button {
-  background: rgba(132, 155, 139, 1);
+  background: none;
   border: none;
   padding: 6px 8px;
   border-radius: 6px;
-  color: rgba(255, 255, 255, 1);
+  border: 1px solid #11031A;
+  color: #11031A;
   cursor: pointer;
   font-weight: 400;
   font-size: 14px;
@@ -152,6 +158,8 @@ export default {
 }
 .main_content_center_tab button.active {
   background: rgba(123, 97, 255, 1);
+  border: none;
+  color: #fff;
 }
 .main_content_slider {
   position: relative;
@@ -354,11 +362,12 @@ export default {
   .main_content_slider_wrap_inner {
     grid-template-columns: 1fr 1fr;
   }
+  .main_content_center{
+      flex-direction: column-reverse;
+  }
 }
 @media (max-width: 1285px) {
-  .main_content_wrap {
-    flex-wrap: wrap;
-  }
+  
   .main_content_right_news {
     margin-top: 100px;
   }
@@ -368,8 +377,15 @@ export default {
   flex-wrap: wrap;
   gap: 16px;
 }
+.main_left {
+  width: 20%;
+}
+.menu_list {
+  width: 20%;
+
+}
   .main_content_wrap_right {
-    width: 100%;
+    width: 70%;
   }
   .main_tab_content {
     width: 100%;
@@ -385,15 +401,20 @@ export default {
     width: 100%;
     border-radius: 6px;
   }
-  .main_left {
-    width: 100%;
-    display: flex;
-    gap: 30px;
-  }
+  
   .big_display {
-    display: none;
+    display: block;
+    width: 100%;
   }
 }
+@media (max-width: 780px){
+  .main_content_wrap_right{
+    width: 100%;
+  }
+  .main_left {
+    display: none;
+  }
+} 
 @media (max-width: 480px) {
   .content_right_news_wrap {
     grid-template-columns: 1fr;
@@ -402,10 +423,7 @@ export default {
   gap: 16px;
 }
  
-  .main_left,
-  .main_content_right {
-    display: none;
-  }
+  
   .main_content_slider_wrap_inner {
     grid-template-columns: 1fr;
   }

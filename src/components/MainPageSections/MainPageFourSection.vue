@@ -123,9 +123,11 @@ export default {
 }
 @media  (max-width: 780px){
   .four_section_wrap{
-    grid-template-columns: 1fr 1fr;
+    height: 70vh;
 
+    grid-template-columns: 1fr 1fr;
   }
+  
 }
 @media  (max-width: 480px){
   .four_section_wrap{

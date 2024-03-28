@@ -1,7 +1,10 @@
 <template>
   <div class="main_left">
-    <div class="menu_list">
-      <button @click="selectSlider('Slider')" :class="{ active: activeSlider === 'Slider' }">
+    <div :class="{ menu_list: true, padding_top: isFixed }">
+      <button
+        @click="selectSlider('Slider')"
+        :class="{ active: activeSlider === 'Slider' }"
+      >
         <svg
           width="18"
           height="20"
@@ -16,7 +19,10 @@
         </svg>
         Каталог курсов
       </button>
-      <button  @click="selectSlider('NewsSlider')" :class="{ active: activeSlider === 'NewsSlider' }">
+      <button
+        @click="selectSlider('NewsSlider')"
+        :class="{ active: activeSlider === 'NewsSlider' }"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 50 50"
@@ -48,79 +54,25 @@
         Карьерные возможности
       </button>
     </div>
-    <div class="main_content_right mobile_filter">
-      <div class="form_input">
-            <div class="form_input_text">
-              <img src="../../assets/search.svg" alt="" />
-              <input type="text" placeholder="Поиск Курсов" />
-            </div>
-            <!-- <button><img src="../../assets/filter.svg" alt="" /></button> -->
-          </div>
-          <p class="form_title">Тип обучения на платформе</p>
-          <div class="form_input">
-            <div class="form_input_select">
-              <form>
-                <v-select :options="countries" label="Любой" placeholder="Любой"></v-select>
-              </form>
-            </div>
-          </div>
-          <div class="form_check">
-            <div
-              :class="{ form_check_input: true, active: activeInput }"
-              @click="handleCheck"
-            >
-              <img src="../../assets/check.svg" alt="" />
-            </div>
-            <p>С трудоустройством</p>
-          </div>
-          <p class="form_title">Уровень сложности</p>
-          <div class="form_input">
-            <div class="form_input_select">
-              <form>
-                <v-select :options="countries" label="Любой" placeholder="Любой" ></v-select>
-              </form>
-            </div>
-          </div>
-          <p class="form_title">Длительность</p>
-          <p class="range">от 1 до 24 месяцев</p>
-          <div class="form_input">
-            <div class="form_input_select range_input">
-              <img
-                class="minus"
-                @click="decreaseNumber"
-                src="../../assets/minus.svg"
-                alt=""
-              />
-              <div class="range_number">{{ numberValue }}</div>
-              <img
-                class="plus"
-                @click="increaseNumber"
-                src="../../assets/plus.svg"
-                alt=""
-              />
-            </div>
-          </div>
-    </div>
+    
   </div>
 </template>
 
 <script>
-import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 
 export default {
   name: "MenuList-template",
   data() {
     return {
+      isFixed: false,
+
       numberValue: 1,
       activeInput: false,
-      activeSlider: 'Slider',
-      countries: ["Легкий", "Средний","Тяжелый", "Любой"],
+      activeSlider: "Slider",
     };
   },
-  components : {
-    vSelect,
-  },
+ 
   methods: {
     increaseNumber() {
       if (this.numberValue < 24) {
@@ -137,10 +89,48 @@ export default {
     },
     selectSlider(sliderName) {
       this.activeSlider = sliderName;
-      this.$emit('changeSlider', sliderName); // Emitting the event with the selected slider name
-    }
+      this.$emit("changeSlider", sliderName); // Emitting the event with the selected slider name
+    },
+    handleScroll() {
+      if (window.scrollY > 60) {
+        this.isFixed = true; // Add the class when scrolled down by 80px
+      } else {
+        this.isFixed = false; // Remove the class when not scrolled down by 80px
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.menu_list {
+  position: fixed;
+  width: 12%;
+  
+}
+
+.padding_top {
+  padding-top: 30px;
+}
+
+@media (max-width: 2600px){
+  .menu_list {
+    width: 9%;
+
+}}
+@media (max-width: 1900px){
+  .menu_list {
+    width: 12%;
+
+}}
+@media (max-width: 1285px){
+  .menu_list {
+    width: 20%;
+}}
+</style>

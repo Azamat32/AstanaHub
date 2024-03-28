@@ -1,5 +1,5 @@
 <template>
-  <div class="first_section">
+  <div :class="{'first_section': true,'padding_top': isFixed}">
     <div class="swiper">
       <div class="swiper_wrap">
         <div
@@ -46,6 +46,7 @@ export default {
   name: "MainFirstSection-template",
   data() {
     return {
+      isFixed:false,
       slides: [
         {
           image: startupImage,
@@ -83,15 +84,33 @@ export default {
       // Update the activeIndex when a span is clicked
       this.activeIndex = index;
     },
+    handleScroll() {
+      var navbar = document.querySelector('.first_section');
+      if (window.scrollY > navbar.offsetTop) {
+        this.isFixed = true;
+      } else {
+        this.isFixed = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
 
-<style>
+<style scoped>
 .first_section {
   display: flex;
   gap: 10px;
   margin-bottom: 42px;
+  transition: 0.4s;
+}
+.padding_top{
+  padding-top: 100px;
 }
 .first_section_second {
   width: 40%;
@@ -254,7 +273,7 @@ export default {
 .padding_span.active{
     background: #7B61FF;
 }
-@media  (max-width: 780px){
+@media  (max-width: 900px){
   .first_section{
       flex-wrap: wrap;
   }

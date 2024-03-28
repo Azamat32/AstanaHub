@@ -14,8 +14,7 @@
       <h2>{{ item.price }}</h2>
     </div>
     <div class="slider_item_button">
-      <button @click="handleClick" class="btn">Подробнее</button>
-      <button class="slider_register_btn">Записаться</button>
+      <button class="slider_register_btn">Подробнее</button>
       <!-- <button class=" btn circle">
         <svg 
           width="14"
@@ -198,7 +197,7 @@ export default {
 }
 .slider_item_button {
   padding: 15px 14px;
-  justify-content: space-between;
+  justify-content: end;
   display: flex;
   align-items: center;
   gap: 13px;

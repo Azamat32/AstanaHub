@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <div :class="{'navbar': true, 'fixed': isFixed }">
     <div class="container_big">
       <div class="navbar__body">
         <div class="navbar__left">
@@ -10,14 +10,14 @@
             <span></span>
           </div>
           <a href="#!" class="navbar_logo"
-            ><img src="../../assets/Logo.png" alt=""
-          /></a>
+            ><img src="../../assets/logo mid.png" alt="" /></a>
           <a href="#!" class="navbar_mobile_logo"
             ><img src="../../assets/Logo.svg" alt=""
           /></a>
         </div>
         <div class="navbar__center">
-          <a href="#!"><img src="../../assets/logo mid.png" alt="" /></a>
+          <a href="#!"><img src="../../assets/Logo.png" alt=""
+          /></a>
         </div>
         <div class="navbar__right">
           <button href="#!" class="navbar_search">
@@ -139,12 +139,22 @@ export default {
       activeSlider: "Slider",
       isActiveBtn: false,
       isActiveMenu: false,
+      isFixed: false,
     };
   },
   methods: {
     handleLanguage() {
       this.isActive = !this.isActive;
     },
+    handleScroll() {
+      var navbar = document.querySelector('.navbar');
+      if (window.scrollY > navbar.offsetTop) {
+        this.isFixed = true;
+      } else {
+        this.isFixed = false;
+      }
+    },
+
     selectSlider(sliderName) {
       this.activeSlider = sliderName;
       this.$emit("changeSlider", sliderName); // Emitting the event with the selected slider name
@@ -170,6 +180,12 @@ export default {
       document.body.style.overflow = "auto";
     },
   },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 };
 </script>
 
@@ -178,6 +194,14 @@ export default {
   background: #fff;
   display: block;
   margin-bottom: 24px;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Add any additional styling for the fixed navbar */
 }
 .navbar_search {
   color: rgba(3, 26, 10, 1);
@@ -202,7 +226,7 @@ export default {
   gap: 8px;
   position: relative;
 }
-.navbar__center img {
+.navbar_logo img {
   width: 62px;
   height: 62px;
 }
@@ -375,7 +399,7 @@ export default {
 .menu_list button.active svg path {
   fill: rgba(123, 97, 255, 1);
 }
-@media (max-width: 480px) { 
+@media (max-width: 780px) { 
 .container_big{
   padding: 0px 20px;
 }
