@@ -35,26 +35,9 @@ export default {
         vebinarItems: [
         {
           title: "Webinar from Digital Nomad",
-          description:
-            "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
+            
         },
-        {
-          title: "Webinar from Digital Nomad",
-          description:
-            "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
-        },{
-          title: "Webinar from Digital Nomad",
-          description:
-            "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
-        },{
-          title: "Webinar from Digital Nomad",
-          description:
-            "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
-        },{
-          title: "Webinar from Digital Nomad",
-          description:
-            "Курс по основам IT-предпринимательства для стартаперов, будущих продакт-менеджеров, школьников и студентов.",
-        }
+      
     ]
     }},
     computed: {
@@ -71,7 +54,6 @@ export default {
         closeActiveModal() {
       this.showActiveModal = false;
       this.activeItem = null;
-      this.enableBodyScroll();
     },
     isActiveItem(item) {
       return this.activeItem === item;
@@ -85,7 +67,6 @@ export default {
     handleCardClick(clickedItem) {
       this.activeItem = clickedItem;
       this.showActiveModal = true;
-      this.disableBodyScroll();
     },
     }
 
