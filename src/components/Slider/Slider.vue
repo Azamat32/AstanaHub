@@ -85,7 +85,6 @@
             </div>
           </div>
           <p class="form_title">Длительность</p>
-          <p class="range">от 1 до 24 месяцев</p>
           <div class="form_input_range">
             <!-- <div class="form_input_select range_input">
               <img
@@ -110,6 +109,8 @@
               :dragable-range="true"
             />
           </div>
+          <p class="range">от 1 до 24 месяцев</p>
+
         </div>
       </div>
     </div>
