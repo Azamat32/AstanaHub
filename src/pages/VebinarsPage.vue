@@ -36,7 +36,7 @@ export default {
         {
           title: "Webinar from Digital Nomad",
             
-        },
+        }
       
     ]
     }},
@@ -79,7 +79,7 @@ export default {
 <style scoped>
 .vebinars_page_wrap{
     display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
     padding-bottom: 150px;
     position: relative;

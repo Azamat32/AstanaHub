@@ -35,9 +35,10 @@
 
 .vebinars_item {
   cursor: pointer;
-  width: 90%;
+  width: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   user-select: none;
@@ -80,7 +81,7 @@
 }
 .vebinars_item_text {
   color: rgba(255, 255, 255, 1);
-  padding: 15px 0px 0px 12px;
+  padding: 15px 5px 0px 12px;
   position: relative;
     padding-top: 60px;
     padding-bottom: 56px;
