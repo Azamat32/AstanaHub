@@ -112,5 +112,8 @@ export default {
   grid-template-columns:  1fr;
 
     }
+    .vebinars_page{
+      width: 100%;
+    }
 }
 </style>

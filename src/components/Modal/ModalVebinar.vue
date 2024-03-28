@@ -6,9 +6,9 @@
             <source src="" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <button ref="playButton" v-show="showPlayButton" @click="togglePlay" :class="{ 'active_btn': !showPlayButton }">
+          <!-- <button ref="playButton" v-show="showPlayButton" @click="togglePlay" :class="{ 'active_btn': !showPlayButton }">
             <img src="../../assets/Play.svg" alt="Pause" />
-          </button>
+          </button> -->
         </div>
         <div class="modal_text">
           <h2>{{ item.title }}</h2>
