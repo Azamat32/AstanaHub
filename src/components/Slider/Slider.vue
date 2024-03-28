@@ -16,13 +16,13 @@
           <div class="main_content_slider_wrap">
             <div class="main_content_slider_wrap_inner">
               <SliderCardVue
-              v-for="(item, index) in filteredItems"
-              :key="index"
-              :item="item"
-              @card-clicked="handleCardClick"
-            />
+                v-for="(item, index) in filteredItems"
+                :key="index"
+                :item="item"
+                @card-clicked="handleCardClick"
+              />
             </div>
-           
+
             
           </div>
           <div class="slider_pagination_wrap">
@@ -57,7 +57,11 @@
           <div class="form_input">
             <div class="form_input_select">
               <form>
-                <v-select :options="countries" label="Любой" placeholder="Любой"></v-select>
+                <v-select
+                  :options="countries"
+                  label="Любой"
+                  placeholder="Любой"
+                ></v-select>
               </form>
             </div>
           </div>
@@ -74,7 +78,11 @@
           <div class="form_input">
             <div class="form_input_select">
               <form>
-                <v-select :options="countries" label="Любой" placeholder="Любой" ></v-select>
+                <v-select
+                  :options="countries"
+                  label="Любой"
+                  placeholder="Любой"
+                ></v-select>
               </form>
             </div>
           </div>
@@ -96,6 +104,13 @@
                 alt=""
               />
             </div>
+            <v-range-slider
+              hide-details
+              hint="Im a hint"
+              inverse-label
+              max="45"
+              min="-100"
+            ></v-range-slider>
           </div>
         </div>
       </div>
@@ -124,8 +139,7 @@ export default {
   },
   data() {
     return {
-      
-      countries: ["Легкий", "Средний","Тяжелый", "Любой"],
+      countries: ["Легкий", "Средний", "Тяжелый", "Любой"],
       filteredItems: [],
       activeInput: false,
       itemsPerPage: 9,
@@ -381,7 +395,7 @@ export default {
 </script>
 
 <style>
-.vs__dropdown-toggle{
+.vs__dropdown-toggle {
   border: none;
 }
 </style>
