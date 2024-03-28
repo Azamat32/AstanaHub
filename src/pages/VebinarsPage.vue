@@ -54,6 +54,7 @@ export default {
         closeActiveModal() {
       this.showActiveModal = false;
       this.activeItem = null;
+      this.enableBodyScroll();
     },
     isActiveItem(item) {
       return this.activeItem === item;
@@ -67,6 +68,7 @@ export default {
     handleCardClick(clickedItem) {
       this.activeItem = clickedItem;
       this.showActiveModal = true;
+      this.disableBodyScroll();
     },
     }
 
