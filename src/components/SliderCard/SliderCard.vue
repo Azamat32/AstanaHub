@@ -208,6 +208,8 @@ export default {
   bottom: -5px;
   width: 100%;
   z-index: 4;
+  background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
+
 }
 
 .slider_register_btn {
