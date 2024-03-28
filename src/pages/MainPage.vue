@@ -1,11 +1,8 @@
 <template>
   <div>
-    <Sales></Sales>
-    <navbar @changeSlider="changeSlider"></navbar>
     <div class="container">
       <div class="main_content_wrap">
         
-        <MenuList @changeSlider="changeSlider"></MenuList>
         <div class="main_content_wrap_right">
           <div class="main_content_sections">
             <MainPageFirstSection></MainPageFirstSection>
@@ -21,13 +18,11 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Navbar from "../components/Navbar/Navbar.vue";
-import Footer from "../components/Footer/Footer.vue";
 import Sales from "../components/Sales/Sales.vue";
 import Slider from "../components/Slider/Slider.vue";
 import MenuList from "../components/MenuList/MenuList.vue";
@@ -42,7 +37,6 @@ export default {
   props: {},
   components: {
     Navbar,
-    Footer,
     Sales,
     Slider,
     MenuList,
@@ -75,7 +69,7 @@ export default {
 }
 
 .main_content_wrap_right {
-  width: 80%;
+  width: 100%;
 }
 .main_welcome {
   background: linear-gradient(90deg, #9747ff 0%, #7b43fc 49.5%, #563cf4 99.99%);

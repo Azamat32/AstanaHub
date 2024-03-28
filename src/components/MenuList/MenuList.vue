@@ -51,7 +51,7 @@
           />
         </svg>
 
-        Карьерные возможности
+        Astana Hub Meetups
       </button>
     </div>
     

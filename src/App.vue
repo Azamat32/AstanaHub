@@ -1,17 +1,46 @@
 <template>
   <div id="app">
-    <MainPage/>
+    <Sales></Sales>
+    <navbar @changeSlider="changeSlider"></navbar>
+    <div class="container">
+      <div class="main_content_wrap">
+        
+        <MenuList @changeSlider="changeSlider"></MenuList>
+        <MainPage/>
+        
+      </div>
+    </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import MainPage from './pages/MainPage.vue'
+import Navbar from "./components/Navbar/Navbar.vue";
+import Footer from "./components/Footer/Footer.vue";
+import Sales from "./components/Sales/Sales.vue";
+import MenuList from "./components/MenuList/MenuList.vue";
 
 export default {
   name: 'App',
   components: {
-    MainPage
-  }
+    MainPage,
+    Navbar,
+    Footer,
+    Sales,
+    MenuList,
+  },
+  data() {
+    return {
+      activeSlider: 'Slider',
+    };
+  },
+  methods: {
+    changeSlider(slider) {
+      this.activeSlider = slider;
+    },
+    
+  },
 }
 </script>
 
