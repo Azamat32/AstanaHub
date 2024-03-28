@@ -418,5 +418,6 @@ export default {
 }
 .vue-slider-dot-handle{
   background: #000;
+  box-shadow: none !important;
 }
 </style>
