@@ -95,7 +95,7 @@
     font-weight:600;
     font-size: 15px
 }
-@media  (max-width: 780px){
+@media  (max-width: 980px){
 .third_section{
     flex-direction: column;
 }

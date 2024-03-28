@@ -1,14 +1,12 @@
 <template>
   <div class="slider_item" ref="sliderItem">
     <div class="slider_item_banner">
-        <div class="slider_banner_bg"></div>
+      <div class="slider_banner_bg"></div>
       <img src="../../assets/test.jpg" alt="" />
     </div>
     <div class="slider_item_text">
       <div class="slider_item_text_category">
         <span>{{ item.category }}</span>
-
-
       </div>
       <h1>{{ item.title }}</h1>
       <h2>{{ item.price }}</h2>
@@ -67,24 +65,32 @@ export default {
       this.$emit("card-clicked", this.item); // Emitting an event with the item data
     },
     adjustHoverTextPosition() {
-      
       const sliderItem = this.$refs.sliderItem;
       if (!sliderItem) {
-    // Return early if sliderItem is undefined
-    return;
-  }
+        // Return early if sliderItem is undefined
+        return;
+      }
 
-      const sliderItemTextTitle = sliderItem.querySelector(".slider_item_text h1").offsetHeight;
-      const sliderItemTextSubTitle = sliderItem.querySelector(".slider_item_text h2").offsetHeight;
-      const sliderItemTextCategory = sliderItem.querySelector(".slider_item_text_category").offsetHeight;
+      const sliderItemTextTitle = sliderItem.querySelector(
+        ".slider_item_text h1"
+      ).offsetHeight;
+      const sliderItemTextSubTitle = sliderItem.querySelector(
+        ".slider_item_text h2"
+      ).offsetHeight;
+      const sliderItemTextCategory = sliderItem.querySelector(
+        ".slider_item_text_category"
+      ).offsetHeight;
 
-      const sliderHoverText = sliderItem.querySelector(".slider_item_hover_text p");
+      const sliderHoverText = sliderItem.querySelector(
+        ".slider_item_hover_text p"
+      );
       // const sliderCardHeight = sliderItem.offsetHeight;
       // const sliderItemText = sliderItem.querySelector(".slider_item_text");
-        
-      const textHeight = sliderItemTextTitle + sliderItemTextSubTitle + sliderItemTextCategory;
+
+      const textHeight =
+        sliderItemTextTitle + sliderItemTextSubTitle + sliderItemTextCategory;
       // Set the top position of the hover text
-      sliderHoverText.style.marginTop  = textHeight + "px";
+      sliderHoverText.style.marginTop = textHeight + "px";
     },
   },
 };
@@ -100,24 +106,21 @@ export default {
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   user-select: none;
-
 }
-.slider_item_text_category{
+.slider_item_text_category {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 13px;
-
 }
-.slider_item_text_category span{
+.slider_item_text_category span {
 }
 .slider_item:hover .slider_item_hover_text {
   bottom: 0;
   z-index: 2;
   height: 100%;
-
 }
-.slider_banner_bg{
+.slider_banner_bg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -142,11 +145,11 @@ export default {
   transition: 0.4s;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   color: #fff;
-  padding:10px 14px 0px 14px;
+  padding: 10px 14px 0px 14px;
   transition: bottom 0.8s ease, height 0.4s ease;
   bottom: -100%;
   z-index: 2;
-  height: 0%;
+  height: 100%;
 }
 .slider_item_banner {
   position: absolute;
@@ -192,26 +195,28 @@ export default {
   font-size: 24px;
   margin-bottom: 25px;
   z-index: 4;
-  word-wrap:break-word;
+  word-wrap: break-word;
   position: relative;
 }
 .slider_item_button {
   padding: 15px 14px;
-  justify-content: end;
+  justify-content: start;
   display: flex;
   align-items: center;
   gap: 13px;
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   width: 100%;
   z-index: 4;
 }
 
 .slider_register_btn {
-  background: rgba(123, 97, 255, 1);
-  border: 1px solid rgba(237, 245, 240, 1);
+  background: #f0ebf5;
+  border: 1px solid #7b61ff;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
-  color: rgba(255, 255, 255, 1);
+  color: #11031A;
   border-radius: 8px;
   padding: 10px 20px;
   font-weight: 600;
@@ -221,11 +226,10 @@ export default {
 .slider_register_btn:hover {
   border: 1px solid rgba(237, 245, 240, 1);
   background: rgb(105, 75, 255);
+  color: #fff;
 }
 .slider_item_button .btn:hover {
   background: rgb(105, 75, 255);
-
-
 }
 .slider_item_button .btn {
   border: 1px solid rgba(237, 245, 240, 1);
@@ -262,12 +266,11 @@ export default {
 }
 
 @media (max-width: 480px) {
-  .slider_item_button .btn{
+  .slider_item_button .btn {
     width: 50%;
   }
-  .slider_register_btn{
+  .slider_register_btn {
     width: 45%;
-
   }
 }
 </style>

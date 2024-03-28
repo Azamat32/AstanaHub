@@ -124,6 +124,7 @@ export default {
   },
   data() {
     return {
+      
       countries: ["Легкий", "Средний","Тяжелый", "Любой"],
       filteredItems: [],
       activeInput: false,
