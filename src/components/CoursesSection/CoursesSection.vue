@@ -83,6 +83,7 @@ border-radius: 12px;
 border: none;
 text-wrap: nowrap   ;
 gap: 4px;
+cursor: pointer;
 }
 .courses_bottom_right p{
     margin-bottom: 9px;

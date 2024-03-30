@@ -1,9 +1,9 @@
 <template>
-  <div class="courses_card">
     <div class="courses_card">
       <div class="courses_card_top">
         <div class="courses_top_left">
           <span> Предпринимательство </span>
+
           <h1>Freelance School</h1>
         </div>
         <div class="courses_top_right">
@@ -23,7 +23,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
 export default {
@@ -42,7 +41,6 @@ export default {
   display: flex;
   justify-content: space-between;
   gap: 35px;
-  align-items: center;
   padding: 16px 16px 32px 16px;
   background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
 
@@ -50,6 +48,7 @@ export default {
 .courses_top_left span {
   display: block;
   font-size: 12px;
+  width: fit-content;
   font-weight: 400;
   color: #fff;
   text-align: center;
@@ -61,6 +60,7 @@ export default {
 .courses_top_left h1 {
   font-size: 18px;
   font-weight: 600;
+  word-wrap: break-word;
   color: rgba(255, 255, 255, 1);
 }
 .courses_top_right span {
