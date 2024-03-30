@@ -14,13 +14,16 @@
         </div>
       </div>
       <div class="courses_card_bottom">
-        <div class="courses_card_progress_line">
+        <div class="courses_card_bottom_inner">
+          <div class="courses_card_progress_line">
           <div class="progress_bar"></div>
         </div>
         <p>30% материала пройдено</p>
         <div class="bottom_btn">
           <button>Продолжить обучение</button>
         </div>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -33,15 +36,19 @@ export default {
 
 <style scoped>
 .courses_card {
-  background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
   border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  height: 100%;
 }
 .courses_card_top {
   display: flex;
   justify-content: space-between;
-  gap: 35px;
+  gap: 18px;
   align-items: center;
   padding: 16px 16px 32px 16px;
+  background: linear-gradient(103.57deg, #9747ff 9.31%, #7a6af4 100%);
+
 }
 .courses_top_left span {
   display: block;
@@ -89,6 +96,8 @@ export default {
   background: #fff;
   padding: 16px 12px 12px 12px;
   text-align: center;
+  position: relative;
+  height: 20vh;
 }
 .courses_card_bottom p {
   margin-bottom: 20px;
@@ -106,6 +115,11 @@ export default {
   cursor: pointer;
   width: 100%;
   transition: 0.4s;
+}
+.courses_card_bottom_inner{
+  position: absolute;
+  width: 90%;
+  bottom: 10px;
 }
 .courses_card_bottom button:hover{
   background: rgb(127, 30, 254);

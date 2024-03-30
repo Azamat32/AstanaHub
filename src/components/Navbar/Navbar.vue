@@ -13,7 +13,7 @@
             ><img src="../../assets/logo mid.png" alt=""
           /></a>
           <a href="#!" class="navbar_mobile_logo"
-            ><img src="../../assets/Logo.svg" alt=""
+            ><img src="../../assets/logo_mobile.svg" alt=""
           /></a>
         </div>
         <div class="navbar__center">

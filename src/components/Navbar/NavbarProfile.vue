@@ -7,7 +7,7 @@
               ><img src="../../assets/logo mid.png" alt=""
             /></a>
             <a href="#!" class="navbar_mobile_logo"
-              ><img src="../../assets/Logo.svg" alt=""
+              ><img src="../../assets/logo_mobile.svg" alt=""
             /></a>
           </div>
           <div class="navbar__center">
@@ -330,6 +330,7 @@
     fill: rgba(123, 97, 255, 1);
   }
   @media (max-width: 780px) {
+   
     .container_big {
       padding: 0px 20px;
     }

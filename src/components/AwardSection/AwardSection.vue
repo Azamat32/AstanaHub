@@ -37,4 +37,22 @@ export default {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap:11px;
 }
+@media (max-width:900px){
+  .award_section_inner{
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+}
+@media (max-width:780px){
+  .award_section_inner{
+    grid-template-columns: 1fr 1fr ;
+
+}}
+@media (max-width:480px){
+  .award_section_inner{
+    grid-template-columns:  1fr ;
+
+}
+}
 </style>

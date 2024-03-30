@@ -1,21 +1,24 @@
 <template>
   <div :class="{ profile_menu_list: true }">
-    <button>
-      <svg
-        width="18"
-        height="20"
-        viewBox="0 0 18 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8.97559 -3.28786e-06C8.81566 0.00545797 8.66168 0.0619189 8.53613 0.16113L1.42969 5.75976C0.527739 6.47058 0 7.55675 0 8.70507V18.25C0 18.9318 0.568203 19.5 1.25 19.5H6.25C6.9318 19.5 7.5 18.9318 7.5 18.25V13.25C7.5 13.1025 7.60248 13 7.75 13H10.25C10.3975 13 10.5 13.1025 10.5 13.25V18.25C10.5 18.9318 11.0682 19.5 11.75 19.5H16.75C17.4318 19.5 18 18.9318 18 18.25V8.70507C18 7.55675 17.4723 6.47058 16.5703 5.75976L9.46387 0.16113C9.32518 0.0515671 9.15225 -0.00549892 8.97559 -3.28786e-06ZM9 1.70507L15.6426 6.93847C16.1846 7.36566 16.5 8.0154 16.5 8.70507V18H12V13.25C12 12.2925 11.2075 11.5 10.25 11.5H7.75C6.79252 11.5 6 12.2925 6 13.25V18H1.5V8.70507C1.5 8.0154 1.81537 7.36566 2.35742 6.93847L9 1.70507Z"
-          fill="#B073E0"
-        />
-      </svg>
+    <a href="/">
+      <button>
+        <svg
+          width="18"
+          height="20"
+          viewBox="0 0 18 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.97559 -3.28786e-06C8.81566 0.00545797 8.66168 0.0619189 8.53613 0.16113L1.42969 5.75976C0.527739 6.47058 0 7.55675 0 8.70507V18.25C0 18.9318 0.568203 19.5 1.25 19.5H6.25C6.9318 19.5 7.5 18.9318 7.5 18.25V13.25C7.5 13.1025 7.60248 13 7.75 13H10.25C10.3975 13 10.5 13.1025 10.5 13.25V18.25C10.5 18.9318 11.0682 19.5 11.75 19.5H16.75C17.4318 19.5 18 18.9318 18 18.25V8.70507C18 7.55675 17.4723 6.47058 16.5703 5.75976L9.46387 0.16113C9.32518 0.0515671 9.15225 -0.00549892 8.97559 -3.28786e-06ZM9 1.70507L15.6426 6.93847C16.1846 7.36566 16.5 8.0154 16.5 8.70507V18H12V13.25C12 12.2925 11.2075 11.5 10.25 11.5H7.75C6.79252 11.5 6 12.2925 6 13.25V18H1.5V8.70507C1.5 8.0154 1.81537 7.36566 2.35742 6.93847L9 1.70507Z"
+            fill="#B073E0"
+          />
+        </svg>
 
-      <span>На главную</span>
-    </button>
+        <span>На главную</span>
+      </button></a
+    >
+
     <div class="dropdown_button">
       <button
         @click="selectComponent('CoursesSection'), handleClick()"
@@ -76,7 +79,7 @@
       <div class="notification_number"><span>1</span></div>
     </button>
     <button
-      @click="selectComponent('SertificatesSection') ,handleClose()"
+      @click="selectComponent('SertificatesSection'), handleClose()"
       :class="{ active: activeComponent === 'SertificatesSection' }"
     >
       <svg
@@ -95,7 +98,7 @@
       <span>Сертификаты</span>
     </button>
     <button
-      @click="selectComponent('AwardSection'),handleClose()"
+      @click="selectComponent('AwardSection'), handleClose()"
       :class="{ active: activeComponent === 'AwardSection' }"
     >
       <svg
@@ -114,7 +117,7 @@
       <span>Достижения</span>
     </button>
     <button
-      @click="selectComponent('SkillsSection'),handleClose()"
+      @click="selectComponent('SkillsSection'), handleClose()"
       :class="{ active: activeComponent === 'SkillsSection' }"
     >
       <svg
@@ -152,7 +155,7 @@ export default {
       this.$emit("selectComponent", componentName);
     },
     handleClick() {
-      this.isActiveMenu = !this.isActiveMenu
+      this.isActiveMenu = !this.isActiveMenu;
     },
     handleClose() {
       this.isActiveMenu = false;
@@ -167,6 +170,9 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4px;
+}
+a{
+  text-decoration: none;
 }
 .profile_menu_list button {
   background: none;
@@ -234,9 +240,8 @@ export default {
   text-align: left;
   color: rgba(17, 3, 26, 1);
 }
-.list-item p.active{
+.list-item p.active {
   color: rgba(151, 71, 255, 1);
-
 }
 .list-item {
   display: flex;
@@ -298,6 +303,12 @@ export default {
 @media (max-width: 1285px) {
   .menu_list {
     width: 20%;
+  }
+}
+@media (max-width: 780px) {
+  .profile_menu_list {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 </style>

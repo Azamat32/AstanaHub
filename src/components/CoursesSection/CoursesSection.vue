@@ -89,4 +89,25 @@ gap: 4px;
     color: #fff;
     
 }
+
+@media (max-width:900px){
+.courses_top{
+  grid-template-columns: 1fr 1fr;
+
+}
+}
+@media (max-width:780px){
+.courses_top{
+  grid-template-columns:  1fr;
+
+}
+.courses_bottom_inner{
+  flex-direction: column;
+}
+.courses_bottom_left, .courses_bottom_center{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+}
 </style>

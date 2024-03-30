@@ -189,4 +189,16 @@ export default {
   cursor: pointer;
   border-radius: 16px;
 }
+
+@media (max-width:780px){
+  .profile_page_userInfo_wrap{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .profile_page_userInfo_left {
+   
+    justify-content: center;
+    flex-wrap: wrap;
+}
+}
 </style>
