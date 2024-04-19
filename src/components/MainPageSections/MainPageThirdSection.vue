@@ -50,7 +50,7 @@
 .third_section{
     display:flex;
     gap: 32px;
-    margin-bottom: 42px;
+    margin-bottom: 32px;
 }
 .third_section_left{
     text-align:left;
