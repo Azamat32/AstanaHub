@@ -1,6 +1,6 @@
 <template>
   <div :class="{ navbar: true, fixed: isFixed }">
-    <div class="container_big">
+    <div class="container">
       <div class="navbar__body">
         <div class="navbar__left">
           <div
@@ -144,6 +144,7 @@ export default {
       isActiveBtn: false,
       isActiveMenu: false,
       isFixed: false,
+      activePage:""
     };
   },
   methods: {

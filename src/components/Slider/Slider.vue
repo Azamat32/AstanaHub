@@ -110,7 +110,6 @@
             />
           </div>
           <p class="range">от 1 до 24 месяцев</p>
-
         </div>
       </div>
     </div>
@@ -157,10 +156,10 @@ export default {
       countArray: [],
       totalPagesArray: 0,
       tabs: [
+        { label: "Все", active: true },
         { label: "Предпринимательство", active: false },
         { label: "Фриланс", active: false },
         { label: "Карьера", active: false },
-        { label: "Все", active: true },
       ],
       newsItems: [
         {
@@ -333,7 +332,7 @@ export default {
         this.currentPage += 1;
       }
     },
-   
+
     handleCardClick(clickedItem) {
       this.activeItem = clickedItem;
       this.showActiveModal = true;
@@ -395,19 +394,17 @@ export default {
 .vs__dropdown-toggle {
   border: none;
 }
-.vue-slider-process{
-  background: #7B61FF;
-
+.vue-slider-process {
+  background: #7b61ff;
 }
-.vue-slider-dot{
+.vue-slider-dot {
   border: 1px solid #000;
   padding: 6px;
   border-radius: 50px;
   width: 28px !important;
   height: 28px !important;
-
 }
-.vue-slider-dot-handle{
+.vue-slider-dot-handle {
   background: #000;
   box-shadow: none !important;
 }

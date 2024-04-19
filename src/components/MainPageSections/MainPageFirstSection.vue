@@ -5,7 +5,11 @@
         <div
           v-for="(slide, index) in slides"
           :key="index"
-          :class="{ swiper_slide: true, active: activeIndex === index }"
+          :class="[
+            'swiper_slide',
+            { 'active': activeIndex === index, 'fade-in': activeIndex === index },
+            { 'fade-out': activeIndex !== index }
+          ]"
         >
           <div class="slide_banner">
             <img :src="slide.image" />
@@ -92,17 +96,51 @@ export default {
         this.isFixed = false;
       }
     },
+    startSlideInterval() {
+      // Start interval to change slides every 5 seconds (5000 ms)
+      this.slideInterval = setInterval(() => {
+        const nextIndex = (this.activeIndex + 1) % this.slides.length;
+        this.activeIndex = nextIndex;
+      }, 5000);
+    },
+
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    this.startSlideInterval();
   },
   destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
+    clearInterval(this.slideInterval);
   },
 };
 </script>
 
 <style scoped>
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+.fade-out {
+  animation: fade-out 1s ease forwards;
+}
 .first_section {
   display: flex;
   gap: 10px;
