@@ -272,11 +272,11 @@ export default {
 }
 .slide_content button {
   font-size: 16px;
+  background:#edf5f0 ;
   border: 1px solid #edf5f0;
   border-radius: 6px;
   padding: 3px 4px;
   cursor: pointer;
-  background: none;
   font-weight: 400;
   /* margin-bottom: 13px; */
   display: block;
@@ -284,11 +284,11 @@ export default {
   z-index: 4;
   position: relative;
   display: block;
-  color: #fff;
+  color: rgb(27, 27, 27);
   transition: 0.3s;
 }
 .slide_content button:hover{
-    background: #edf5f0;
+    background: #858585;
     color: #000;
 }
 .pagination{
