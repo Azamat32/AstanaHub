@@ -1,14 +1,17 @@
 <template>
   <div class="vebinars_page">
-    <div class="vebinars_page_wrap" :style="{ marginBottom: marginBottomStyle }">
+    <div class="container">
+      <div class="vebinars_page_wrap" :style="{ marginBottom: marginBottomStyle }">
       
-        <VebinarCard
-                v-for="(item, index) in vebinarItems"
-                :key="index"
-                :item="item"
-                @vebinerCard-clicked="handleCardClick"
-              />
+      <VebinarCard
+              v-for="(item, index) in vebinarItems"
+              :key="index"
+              :item="item"
+              @vebinerCard-clicked="handleCardClick"
+            />
+  </div>
     </div>
+  
     <ModalVebinar
       v-if="activeItem"
       :item="activeItem"
