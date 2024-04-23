@@ -77,6 +77,9 @@ export default {
 
 
 <style scoped>
+.vebinars_page{
+  padding: 0 30px;
+}
 .vebinars_page_wrap{
     display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -18,7 +18,7 @@
           />
         </svg>
 
-        Каталог курсов
+        <span>Каталог курсов</span>
       </button>
       <button
         @click="selectPage('NewsPage')"
@@ -37,14 +37,14 @@
           />
         </svg>
 
-        Новости
+        <span>Новости</span>
       </button>
       <button
         @click="selectPage('VebinarsPage')"
         :class="{ active: activePage === 'VebinarsPage' }"
       >
         <svg
-          width="22"
+          width="18"
           height="18"
           viewBox="0 0 22 18"
           fill="none"
@@ -56,7 +56,7 @@
           />
         </svg>
 
-        Astana Hub Meetups
+        <span>Astana Hub Meetups</span>
       </button>
     </div>
   </div>
@@ -119,6 +119,14 @@ export default {
 .menu_list {
   position: fixed;
   width: 12%;
+}
+.menu_list button {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.menu_list button span {
+  width: 80%;
 }
 
 .padding_top {
