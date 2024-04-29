@@ -64,6 +64,10 @@ export default {
   border-radius: 12px;
   padding: 32px;
 }
+.main_welcome button{
+  background: #fff;
+  color: #031a0a;
+}
 .main_welcome h1 {
   color: rgba(250, 250, 250, 1);
   font-weight: 700;
