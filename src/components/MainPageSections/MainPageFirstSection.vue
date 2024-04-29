@@ -171,7 +171,7 @@ export default {
   width: 100%;
 }
 .first_section_second_text {
-  padding: 32px 32px 32px 0px;
+  padding: 32px 0px 32px 0px;
 }
 .first_section_second_text h1 {
   color: #fff;

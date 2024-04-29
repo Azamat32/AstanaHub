@@ -2,17 +2,45 @@
   <div>
     <div class="container">
       <div class="main_content_wrap">
-        
         <div class="main_content_wrap_right">
+          <div data-v-c0b4bafc="" class="main_welcome" style="
+                
+                margin-bottom: 20px;
+              ">
+            <div
+              data-v-c0b4bafc=""
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+              "
+            >
+              <div
+                data-v-c0b4bafc=""
+                class="button"
+                style="
+                  width: auto;
+                  color: #000;
+                  background: #fff;
+                  border-radius: 10px;
+                  padding: 10px 40px;
+                  cursor: pointer !important;
+                "
+              >
+                Войти
+              </div>
+            </div>
+            <!---->
+          </div>
           <div class="main_content_sections">
             <MainPageFirstSection></MainPageFirstSection>
             <MainPageSecondSection></MainPageSecondSection>
             <MainPageThirdSection></MainPageThirdSection>
             <MainPageFourSection></MainPageFourSection>
           </div>
-          
-          <Slider></Slider>
 
+          <Slider></Slider>
         </div>
       </div>
     </div>
@@ -20,16 +48,15 @@
 </template>
 
 <script>
-
 import Slider from "../components/Slider/Slider.vue";
-import MainPageFirstSection from "../components/MainPageSections/MainPageFirstSection.vue"
-import MainPageSecondSection from "../components/MainPageSections/MainPageSecondSection.vue"
-import MainPageThirdSection from "../components/MainPageSections/MainPageThirdSection.vue"
-import MainPageFourSection from "../components/MainPageSections/MainPageFourSection.vue"
+import MainPageFirstSection from "../components/MainPageSections/MainPageFirstSection.vue";
+import MainPageSecondSection from "../components/MainPageSections/MainPageSecondSection.vue";
+import MainPageThirdSection from "../components/MainPageSections/MainPageThirdSection.vue";
+import MainPageFourSection from "../components/MainPageSections/MainPageFourSection.vue";
 
 export default {
   name: "MainPage",
- 
+
   components: {
     Slider,
     MainPageFirstSection,
@@ -37,15 +64,12 @@ export default {
     MainPageThirdSection,
     MainPageFourSection,
   },
-  
+
   methods: {
     changeSlider(slider) {
-      this.$emit('update:activeSlider', slider);
-
+      this.$emit("update:activeSlider", slider);
     },
-    
   },
- 
 };
 </script>
 
@@ -64,7 +88,7 @@ export default {
   border-radius: 12px;
   padding: 32px;
 }
-.main_welcome button{
+.main_welcome button {
   background: #fff;
   color: #031a0a;
 }
@@ -131,8 +155,8 @@ export default {
   border: none;
   padding: 6px 8px;
   border-radius: 6px;
-  border: 1px solid #11031A;
-  color: #11031A;
+  border: 1px solid #11031a;
+  color: #11031a;
   cursor: pointer;
   font-weight: 400;
   font-size: 14px;
@@ -212,13 +236,11 @@ export default {
   /* width: 100%; */
   border-radius: 6px;
   border: none;
-
-
 }
-.form_input_select input::placeholder{
+.form_input_select input::placeholder {
   color: rgba(132, 155, 139, 1);
 }
-.vs__clear{
+.vs__clear {
   display: none;
 }
 .form_check {
@@ -275,7 +297,7 @@ export default {
   top: 10px;
   cursor: pointer;
   position: absolute;
-  right:0;
+  right: 0;
 }
 .content_right_news_title {
   margin-bottom: 16px;
@@ -347,11 +369,10 @@ export default {
   .main_content_slider_wrap_inner {
     grid-template-columns: 1fr 1fr;
   }
-  
 }
 @media (max-width: 1285px) {
-  .main_content_center{
-      flex-direction: column-reverse;
+  .main_content_center {
+    flex-direction: column-reverse;
   }
   .main_content_right_news {
     margin-top: 100px;
@@ -359,17 +380,16 @@ export default {
   .content_right_news_wrap {
     grid-template-columns: 1fr 1fr;
     display: grid;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.main_left {
-  width: 20%;
-  margin-right: 80px;
-}
-.menu_list {
-  width: 20%;
-
-}
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .main_left {
+    width: 20%;
+    margin-right: 80px;
+  }
+  .menu_list {
+    width: 20%;
+  }
   .main_content_wrap_right {
     width: 100%;
   }
@@ -387,29 +407,28 @@ export default {
     width: 100%;
     border-radius: 6px;
   }
-  
+
   .big_display {
     display: block;
     width: 100%;
   }
 }
-@media (max-width: 780px){
-  .main_content_wrap_right{
+@media (max-width: 780px) {
+  .main_content_wrap_right {
     width: 100%;
   }
   .main_left {
     display: none;
   }
-} 
+}
 @media (max-width: 480px) {
   .content_right_news_wrap {
     grid-template-columns: 1fr;
     display: grid;
-  flex-wrap: wrap;
-  gap: 16px;
-}
- 
-  
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
   .main_content_slider_wrap_inner {
     grid-template-columns: 1fr;
   }
